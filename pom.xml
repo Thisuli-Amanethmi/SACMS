@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>SCAMS_CM2601_grp30</artifactId>
+  <artifactId>cwsample</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>SCAMS_CM2601_grp30</name>
+  <name>cwsample</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +58,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.scams_cm2601_grp30/com.example.scams_cm2601_grp30.HelloApplication</mainClass>
+              <mainClass>com.example.cwsample/com.example.cwsample.EventSchedulingSceneApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
