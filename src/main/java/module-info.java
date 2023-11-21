@@ -3,6 +3,7 @@ module com.example.cwsample {
     requires javafx.fxml;
 
 
-    opens com.example.cwsample to javafx.fxml;
-    exports com.example.cwsample;
+
+    exports com.example.sacms_grp30;
+    opens com.example.sacms_grp30 to javafx.fxml;
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="801.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.StudentViewClubViewController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="500.0" fitWidth="801.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@SACMS_2.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="backButton" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="15.0" prefWidth="13.0" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@arrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            <TextField fx:id="searchKeywordsTxt" layoutX="214.0" layoutY="35.0" prefHeight="30.0" prefWidth="281.0" promptText="Enter  keywords..." />
+            <Button fx:id="joinClubButton" layoutX="433.0" layoutY="410.0" mnemonicParsing="false" onAction="#joinClubButtonOnClick" prefHeight="45.0" prefWidth="154.0" style="-fx-background-color: #000000;" text="Join Club" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <TableView fx:id="clubDetailsTable" layoutX="85.0" layoutY="101.0" prefHeight="286.0" prefWidth="630.0">
+              <columns>
+                <TableColumn fx:id="clubNameColumn" prefWidth="149.5999755859375" text="Club Name" />
+                <TableColumn fx:id="clubCategoryColumn" prefWidth="148.7999725341797" text="Club Categeory" />
+                  <TableColumn fx:id="clubDescriptionColumn" prefWidth="331.1999877929687" text="Description" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="471.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="212.0" layoutY="410.0" prefHeight="46.0" prefWidth="214.0" text="Do you want to join a club?">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
