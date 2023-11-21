@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="801.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.scams_cm2601_grp30.StudentLogInViewController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+            <ImageView fitHeight="500.0" fitWidth="801.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SACMS_3.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="emailTxt" layoutX="362.0" layoutY="216.0" prefHeight="31.0" prefWidth="334.0" promptText="john.20205748@iit.ac.lk" />
+                <Button fx:id="logInButton" layoutX="337.0" layoutY="360.0" mnemonicParsing="false" onAction="#logInButtonOnClick" prefHeight="56.0" prefWidth="127.0" style="-fx-background-color: #000000;" text="Log In" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="15.0" prefWidth="13.0" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <PasswordField fx:id="password" layoutX="359.0" layoutY="268.0" prefHeight="32.0" prefWidth="340.0" promptText="********" />
+            <Label layoutX="183.0" layoutY="216.0" prefHeight="30.0" prefWidth="145.0" text="Email             : ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="182.0" layoutY="269.0" prefHeight="30.0" prefWidth="145.0" text="Password       : ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="logInMessageTxt" layoutX="213.0" layoutY="144.0" prefHeight="18.0" prefWidth="374.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
