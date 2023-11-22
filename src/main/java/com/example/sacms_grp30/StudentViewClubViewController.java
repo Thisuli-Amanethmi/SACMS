@@ -6,11 +6,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class StudentViewClubViewController {
+    @FXML
+    private TableView clubDetailsTable;
+
+    @FXML
+    private TableColumn clubIDColumn;
+
+    @FXML
+    private TableColumn clubNameColumn;
+
+    @FXML
+    private TableColumn clubCategoryColumn;
+
+    @FXML
+    private TableColumn clubDescriptionColumn;
+
+    @FXML
+    private TextField clubNameJoinTxt;
+
+    @FXML
+    private Label joinClubMessageLabel;
+
     @FXML
     private Button backButton;
 
@@ -36,17 +56,9 @@ public class StudentViewClubViewController {
     }
 
     public void joinClubButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateJoinClub(actionEvent);
+        String successfulMessage = "Successfully Joined !!!";
+        joinClubMessageLabel.setText(successfulMessage);
+
     }
 
-    private void navigateJoinClub(ActionEvent actionEvent) throws Exception {
-        Stage newStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("studentJoinClub-view.fxml"));
-        newStage.setTitle("Student - Join Club");
-        newStage.setScene(new Scene(root, 800, 500));
-        newStage.show();
-
-        Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        previousStage.close();
-    }
 }

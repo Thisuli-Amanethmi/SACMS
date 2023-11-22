@@ -15,7 +15,7 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="500.0" fitWidth="801.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@SACMS_2.png" />
                     </image>
@@ -33,16 +33,17 @@
                     </graphic>
                 </Button>
             <TextField fx:id="searchKeywordsTxt" layoutX="214.0" layoutY="35.0" prefHeight="30.0" prefWidth="281.0" promptText="Enter  keywords..." />
-            <Button fx:id="joinClubButton" layoutX="433.0" layoutY="410.0" mnemonicParsing="false" onAction="#joinClubButtonOnClick" prefHeight="45.0" prefWidth="154.0" style="-fx-background-color: #000000;" text="Join Club" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="joinClubButton" layoutX="484.0" layoutY="373.0" mnemonicParsing="false" onAction="#joinClubButtonOnClick" prefHeight="45.0" prefWidth="154.0" style="-fx-background-color: #000000;" text="Join Club" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <TableView fx:id="clubDetailsTable" layoutX="85.0" layoutY="101.0" prefHeight="286.0" prefWidth="630.0">
+            <TableView fx:id="clubDetailsTable" layoutX="85.0" layoutY="101.0" prefHeight="254.0" prefWidth="630.0">
               <columns>
-                <TableColumn fx:id="clubNameColumn" prefWidth="149.5999755859375" text="Club Name" />
-                <TableColumn fx:id="clubCategoryColumn" prefWidth="148.7999725341797" text="Club Categeory" />
-                  <TableColumn fx:id="clubDescriptionColumn" prefWidth="331.1999877929687" text="Description" />
+                <TableColumn fx:id="clubIDColumn" prefWidth="109.5999755859375" text="Club ID" />
+                <TableColumn fx:id="clubNameColumn" prefWidth="170.40000915527344" text="Club Name" />
+                  <TableColumn fx:id="clubCategoryColumn" prefWidth="123.20001220703125" text="Club Category" />
+                  <TableColumn fx:id="clubDescriptionColumn" prefWidth="224.80002441406248" text="Description" />
               </columns>
             </TableView>
             <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="471.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
@@ -50,7 +51,12 @@
                   <Image url="@search.png" />
                </image>
             </ImageView>
-            <Label layoutX="212.0" layoutY="410.0" prefHeight="46.0" prefWidth="214.0" text="Do you want to join a club?">
+            <TextField fx:id="clubNameJoinTxt" layoutX="161.0" layoutY="380.0" prefHeight="31.0" prefWidth="313.0" promptText="Enter the club ID you wish to join...">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="joinClubMessageLabel" layoutX="319.0" layoutY="440.0" prefHeight="30.0" prefWidth="162.0" textAlignment="CENTER" textFill="RED">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
