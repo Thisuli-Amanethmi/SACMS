@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class StudentViewController {
     @FXML
-    private Button homeButton;
+    private Button backButton;
 
     @FXML
     private Button loginButton;
@@ -19,11 +19,11 @@ public class StudentViewController {
     @FXML
     private Button registerButton;
 
-    public void homeButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateHome(actionEvent);
+    public void backButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateBack(actionEvent);
     }
 
-    private void navigateHome(ActionEvent actionEvent) throws Exception {
+    private void navigateBack(ActionEvent actionEvent) throws Exception {
         Stage newStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("SACMS-view.fxml"));
         newStage.setTitle("SCAMS");
