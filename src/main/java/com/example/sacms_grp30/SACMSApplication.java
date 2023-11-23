@@ -13,9 +13,9 @@ public class SACMSApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
         primaryStage.setResizable(false);
-        Parent root = FXMLLoader.load(getClass().getResource("SACMS-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
         primaryStage.setTitle("SCAMS");
-        primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
