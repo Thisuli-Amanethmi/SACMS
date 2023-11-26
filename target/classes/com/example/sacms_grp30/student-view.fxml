@@ -22,14 +22,14 @@
                         <Image url="@user.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="homeButton" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#homeButtonOnClick" prefHeight="15.0" prefWidth="13.0" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="backButton" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="15.0" prefWidth="13.0" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                     <graphic>
                         <ImageView fitHeight="69.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@home.png" />
+                                <Image url="@arrow.png" />
                             </image>
                         </ImageView>
                     </graphic>

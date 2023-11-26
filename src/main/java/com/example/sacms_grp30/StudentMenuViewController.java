@@ -22,11 +22,11 @@ public class StudentMenuViewController {
     @FXML
     private Button joinMeetingButton;
 
-    public void backButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateBack(actionEvent);
+    public void logOutButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateLogOut(actionEvent);
     }
 
-    private void navigateBack(ActionEvent actionEvent) throws Exception {
+    private void navigateLogOut(ActionEvent actionEvent) throws Exception {
         Stage newStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("SACMS-view.fxml"));
         newStage.setTitle("SCAMS");
@@ -38,10 +38,10 @@ public class StudentMenuViewController {
     }
 
     public void selectClubButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateClubs(actionEvent);
+        navigateViewClubs(actionEvent);
     }
 
-    private void navigateClubs(ActionEvent actionEvent) throws Exception {
+    private void navigateViewClubs(ActionEvent actionEvent) throws Exception {
         Stage newStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("studentViewClub-view.fxml"));
         newStage.setTitle("SCAMS - Clubs");
@@ -53,13 +53,47 @@ public class StudentMenuViewController {
     }
 
     public void viewEventsButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateViewEvents(actionEvent);
+    }
 
+    private void navigateViewEvents(ActionEvent actionEvent) throws Exception {
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("studentViewEvents-view.fxml"));
+        newStage.setTitle("SCAMS - Events");
+        newStage.setScene(new Scene(root, 800, 500));
+        newStage.show();
+
+        Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        previousStage.close();
     }
 
     public void joinMeetingButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateViewMeetings(actionEvent);
+    }
 
+    private void navigateViewMeetings(ActionEvent actionEvent) throws Exception {
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("studentViewMeetings-view.fxml"));
+        newStage.setTitle("SCAMS - Meetings");
+        newStage.setScene(new Scene(root, 800, 500));
+        newStage.show();
+
+        Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        previousStage.close();
     }
 
     public void viewProfileButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateViewStudentProfile(actionEvent);
+    }
+
+    private void navigateViewStudentProfile(ActionEvent actionEvent) throws Exception {
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("studentViewProfile-view.fxml"));
+        newStage.setTitle("SACMS - Student Profile");
+        newStage.setScene(new Scene(root, 800, 500));
+        newStage.show();
+
+        Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        previousStage.close();
     }
 }
