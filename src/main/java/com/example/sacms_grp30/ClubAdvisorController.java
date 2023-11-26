@@ -27,26 +27,19 @@ public class ClubAdvisorController {
 
     @FXML
     void loadClubAdvisorLogin(ActionEvent event) throws IOException {
-        //loadWindows(event, "club-advisor-login.fxml", "Club Advisor - Login");
+
     }
 
     @FXML
     void loadClubAdvisorRegister(ActionEvent event) throws IOException {
-        loadWindows(event, "club-advisor-register.fxml", "Club Advisor - Registration");
+
     }
 
     @FXML
     void loadHome(ActionEvent event) throws IOException {
-        loadWindows(event,"SACMS-view.fxml","Club Advisor");
+
     }
 
-    public void loadWindows(ActionEvent event,String fxmlFile,String title) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.setTitle(title);
-        window.show();
-    }
 }
 
 

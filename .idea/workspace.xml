@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43c1d61e-7a5f-45d6-a606-5e89367af622" name="Changes" comment="Club Advisor UIs and Cotrollers Created" />
+    <list default="true" id="43c1d61e-7a5f-45d6-a606-5e89367af622" name="Changes" comment="Club Advisor UIs and Cotrollers Created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/tables/TableClubAdvisorCheckMembers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/tables/TableClubAdvisorManageClub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/tables/TableClubAdvisorViewClub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorCheckMembersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorCheckMembersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorCreateClubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorCreateClubController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorManageClubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorManageClubController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorViewClubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorViewClubController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/SACMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/SACMSApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-manage-club.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-manage-club.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-view-club.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-view-club.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/SACMSApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/SACMSApplication.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,20 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Nina&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thisuli Amanethmi/IdeaProjects/DemoATM&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Nina",
+    "last_opened_file_path": "C:/Users/Thisuli Amanethmi/IdeaProjects/DemoATM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SACMSApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.sacms_grp30.SACMSApplication" />
@@ -79,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700666780309</updated>
-      <workItem from="1700990920261" duration="4470000" />
+      <workItem from="1700990920261" duration="9907000" />
     </task>
     <task id="LOCAL-00001" summary="Club Advisor UIs and Cotrollers Created">
       <option name="closed" value="true" />

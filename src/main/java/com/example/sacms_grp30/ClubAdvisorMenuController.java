@@ -28,36 +28,73 @@ public class ClubAdvisorMenuController {
     private Button btnViewClub;
 
     @FXML
-    void backToHome(ActionEvent event) {
+    void backToHome(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnLogout.getScene().getWindow();
+        window.close();
+
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor");
+        stage.show();
 
     }
 
     @FXML
-    void createClub(ActionEvent event) {
+    void createClub(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnCreateClub.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-create-club.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor - Club Creation");
+        stage.show();
     }
 
     @FXML
-    void manageClub(ActionEvent event) {
+    void manageClub(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnManageClub.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-manage-club.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor - Club Management");
+        stage.show();
     }
 
     @FXML
-    void scheduleEvent(ActionEvent event) {
-        //loadWindows(event, "club-advisor-register.fxml", "Club Advisor - Registration");
+    void scheduleEvent(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnEventSchedule.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("EventSchedulingScene.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor - Event Scheduling");
+        stage.show();
     }
 
     @FXML
-    void viewClub(ActionEvent event) {
+    void viewClub(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnViewClub.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-view-club.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor - View Clubs");
+        stage.show();
     }
-
-    /*public void loadWindows(ActionEvent event,String fxmlFile,String title) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.setTitle(title);
-        window.show();
-    }*/
 }

@@ -16,8 +16,8 @@
             <Image url="@SACMS_3.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnback" layoutX="52.0" layoutY="45.0" mnemonicParsing="false" onAction="#loadManageClub" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: white;" text="Button" />
-      <ImageView fitHeight="33.0" fitWidth="41.0" layoutX="52.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="btnback" layoutX="52.0" layoutY="45.0" mnemonicParsing="false" onAction="#loadManageClub" prefHeight="35.0" prefWidth="36.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="33.0" fitWidth="41.0" layoutX="52.0" layoutY="45.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BackButton.png" />
          </image>
