@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorCheckMembersController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="800.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SACMS_3.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBack" layoutX="50.0" layoutY="43.0" mnemonicParsing="false" onAction="#loadManageClub" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: white;" text="Button" />
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="50.0" layoutY="43.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BackButton.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearchClubName" layoutX="260.0" layoutY="140.0" prefHeight="26.0" prefWidth="281.0" promptText="Search Club Name" />
+      <Button fx:id="btnSearch" layoutX="555.0" layoutY="140.0" mnemonicParsing="false" onAction="#searchClubName" prefHeight="26.0" prefWidth="35.0" style="-fx-background-color: white;" text="Button" />
+      <ImageView fitHeight="22.0" fitWidth="29.0" layoutX="561.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@search.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="85.0" layoutY="189.0" prefHeight="271.0" prefWidth="633.0">
+         <content>
+            <TableView fx:id="tblClubMembers" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="270.0" prefWidth="634.0">
+              <columns>
+                <TableColumn fx:id="colStudentID" editable="false" prefWidth="121.0" sortable="false" text="Student ID" />
+                <TableColumn fx:id="colStudentName" editable="false" prefWidth="282.0" sortable="false" text="Student Name" />
+                  <TableColumn fx:id="colEmail" editable="false" prefWidth="214.0" sortable="false" text="Email" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
