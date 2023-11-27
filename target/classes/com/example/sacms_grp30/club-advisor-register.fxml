@@ -31,36 +31,36 @@
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtStaffID" layoutX="408.0" layoutY="153.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="153.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="244.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtFirstName" layoutX="408.0" layoutY="199.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="199.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="245.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtLastName" layoutX="408.0" layoutY="246.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="246.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="244.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtEmail" layoutX="408.0" layoutY="293.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="293.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="244.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtPassword" layoutX="408.0" layoutY="340.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="340.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="244.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="txtConfirmPassword" layoutX="408.0" layoutY="387.0" prefHeight="26.0" prefWidth="196.0" />
+      <TextField layoutX="408.0" layoutY="387.0" prefHeight="26.0" prefWidth="196.0" />
    </children>
 </AnchorPane>
