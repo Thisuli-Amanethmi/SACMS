@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43c1d61e-7a5f-45d6-a606-5e89367af622" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/Events.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/Meetings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewEventsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewMeetingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/EventSchedulingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/EventSchedulingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleEventsScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleEventsScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
