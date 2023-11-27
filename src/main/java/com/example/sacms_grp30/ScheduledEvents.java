@@ -7,9 +7,9 @@ public class ScheduledEvents {
     private String eventTime;
     private String eventLocation;
     private String eventDescription;
-    private LocalDate eventDate;
+    private String eventDate;
 
-    public ScheduledEvents(String eventName, LocalDate eventDate, String eventTime,String eventLocation, String eventDescription){
+    public ScheduledEvents(String eventName, String eventDate, String eventTime, String eventLocation, String eventDescription, String text){
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
@@ -17,4 +17,5 @@ public class ScheduledEvents {
         this.eventDescription = eventDescription;
 
     }
+
 }
