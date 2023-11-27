@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="567.0" prefWidth="842.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorManageClubController">
+   <children>
+      <ImageView fitHeight="567.0" fitWidth="842.0" pickOnBounds="true">
+         <image>
+            <Image url="@SACMS_3.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBack" layoutX="47.0" layoutY="35.0" mnemonicParsing="false" onAction="#loadClubAdvisorMenu" prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: white;" text="Button" />
+      <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="47.0" layoutY="35.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearchClubName" layoutX="79.0" layoutY="123.0" prefHeight="26.0" prefWidth="255.0" promptText="Search Club Name" />
+      <Button fx:id="btnSearch" layoutX="346.0" layoutY="123.0" mnemonicParsing="false" onAction="#searchClub" prefHeight="26.0" prefWidth="32.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="349.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@search.png" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="63.0" layoutY="177.0" prefHeight="227.0" prefWidth="582.0">
+         <content>
+            <TableView fx:id="tblClub" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="224.0" prefWidth="579.0">
+              <columns>
+                <TableColumn fx:id="colClubAdvisorName" editable="false" prefWidth="118.0" sortable="false" text="Club Advisor Name" />
+                <TableColumn fx:id="colClubID" editable="false" prefWidth="60.0" sortable="false" text="Club ID" />
+                  <TableColumn fx:id="colClubName" editable="false" prefWidth="108.0" sortable="false" text="Club Name" />
+                  <TableColumn fx:id="colCategory" editable="false" prefWidth="119.0" sortable="false" text="Category" />
+                  <TableColumn fx:id="colDescription" editable="false" prefWidth="173.0" sortable="false" text="Description" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <TextField fx:id="txtClubID" editable="false" layoutX="63.0" layoutY="439.0" prefHeight="26.0" prefWidth="67.0" />
+      <TextField fx:id="txtClubName" layoutX="274.0" layoutY="439.0" prefHeight="26.0" prefWidth="151.0" />
+      <TextField fx:id="txtDescription" layoutX="439.0" layoutY="439.0" prefHeight="26.0" prefWidth="206.0" />
+      <Label layoutX="64.0" layoutY="422.0" text="Club ID">
+         <font>
+            <Font name="SansSerif Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="422.0" text="Club Advisor ID">
+         <font>
+            <Font name="SansSerif Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtClubAdvisorID" layoutX="144.0" layoutY="439.0" prefHeight="26.0" prefWidth="112.0" />
+      <Label layoutX="274.0" layoutY="422.0" text="Club Name">
+         <font>
+            <Font name="SansSerif Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="422.0" text="Description">
+         <font>
+            <Font name="SansSerif Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnUpdate" layoutX="378.0" layoutY="496.0" mnemonicParsing="false" onAction="#updateClub" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: Black;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="207.0" layoutY="496.0" mnemonicParsing="false" onAction="#deleteClub" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: Black;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEventScheduling" layoutX="673.0" layoutY="239.0" mnemonicParsing="false" onAction="#loadEventSchedule" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: Black;" text="Event Scheduling" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCheckMembers" layoutX="673.0" layoutY="291.0" mnemonicParsing="false" onAction="#loadCheckMembers" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: Black;" text="Check Members" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
