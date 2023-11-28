@@ -36,6 +36,14 @@ public class SACMSViewController {
     }
 
     private void navigateClubAdvisor(ActionEvent actionEvent) throws Exception {
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
+        newStage.setTitle("SCAMS - Club Advisor");
+        newStage.setScene(new Scene(root, 800, 500));
+        newStage.show();
+
+        Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        previousStage.close();
 
     }
 }

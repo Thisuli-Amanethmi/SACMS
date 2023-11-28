@@ -41,9 +41,9 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="IDtxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                      <TextField fx:id="nameTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="emailTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="IDtxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your ID (ex: S001)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="nameTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your name (ex: Lisa)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="emailTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your email (ex: lisa001@gmail.com)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                       <PasswordField fx:id="password" prefHeight="30.0" prefWidth="404.0" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <PasswordField fx:id="confirmPassword" prefHeight="30.0" prefWidth="406.0" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                       <Label prefHeight="30.0" prefWidth="238.0" text="Name                           :" GridPane.rowIndex="2">
