@@ -32,14 +32,14 @@ public class SACMSViewController {
     }
 
     public void clubAdvisorButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateClubAdvisor(actionEvent);
+        navigateClubAdvisorConfirmation(actionEvent);
     }
 
-    private void navigateClubAdvisor(ActionEvent actionEvent) throws Exception {
+    private void navigateClubAdvisorConfirmation(ActionEvent actionEvent) throws Exception {
         Stage newStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
-        newStage.setTitle("SCAMS - Club Advisor");
-        newStage.setScene(new Scene(root, 800, 500));
+        Parent root = FXMLLoader.load(getClass().getResource("clubAdvisorConfirmation-view.fxml"));
+        newStage.setTitle("SCAMS - Club Advisor Confirmation");
+        newStage.setScene(new Scene(root, 440, 290));
         newStage.show();
 
         Stage previousStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();

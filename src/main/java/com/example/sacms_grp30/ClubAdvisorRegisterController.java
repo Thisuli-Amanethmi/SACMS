@@ -18,6 +18,7 @@ public class ClubAdvisorRegisterController {
 
     @FXML
     private Button btnRegister;
+
     @FXML
     private TextField txtConfirmPassword;
 
