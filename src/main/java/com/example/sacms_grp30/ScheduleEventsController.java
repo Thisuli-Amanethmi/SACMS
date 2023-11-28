@@ -57,6 +57,7 @@ public class ScheduleEventsController {
         event.add(EventDescription.getText());
         Events.eventDetailsList.add(event);
         SuccessfulMessage.setText("Event Scheduled Successfully");
+        clearTextFields();
     }
 
     String existingEvent;
@@ -78,6 +79,19 @@ public class ScheduleEventsController {
 
             }
         }
+    }
+    public void handleClearButton(ActionEvent event) throws Exception {
+        clearTextFields();
+        SuccessfulMessage.setText("");
+    }
+
+    private void clearTextFields() {
+        EventID.setValue(null);
+        EventName.clear();
+        EventDate.setValue(null);
+        EventTime.clear();
+        EventLocation.clear();
+        EventDescription.clear();
     }
 
     public boolean existingEntries(String existingID) {

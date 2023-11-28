@@ -77,6 +77,18 @@ public class ScheduleMeetingController {
             }
         }
     }
+    public void handleClearButton(ActionEvent event) throws Exception {
+        clearTextFields();
+        SuccessfulMessage.setText("");
+    }
+    private void clearTextFields() {
+        MeetingID.setValue(null);
+        MeetingTopic.clear();
+        MeetingDate.setValue(null);
+        MeetingTime.clear();
+        MeetingPlatform.clear();
+        MeetingDescription.clear();
+    }
     public boolean existingEntries(String existingID){
         boolean idExisting = false;
         for (int i = 0; i < Meetings.meetingDetailsList.size(); i++) {

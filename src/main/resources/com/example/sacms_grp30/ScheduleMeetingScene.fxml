@@ -21,7 +21,7 @@
                 <Image url="@SACMS.png" />
             </image>
         </ImageView>
-        <Button fx:id="SubmitButton" layoutX="479.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: black; -fx-font-weight: bold; -fx-background-radius: 100;" text="SUBMIT" textFill="WHITE">
+        <Button fx:id="SubmitButton" layoutX="426.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: black; -fx-font-weight: bold; -fx-background-radius: 100;" text="SUBMIT" textFill="WHITE">
             <font>
                 <Font name="Arial Black" size="12.0" />
             </font>
@@ -70,11 +70,11 @@
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <TextField fx:id="MeetingTopic" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="MeetingTopic" promptText="Enter Meeting Topic" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <DatePicker fx:id="MeetingDate" prefHeight="26.0" prefWidth="333.0" promptText=" Select Your Date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField fx:id="MeetingTime" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <TextField fx:id="MeetingPlatform" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <TextField fx:id="MeetingDescription" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <TextField fx:id="MeetingTime" promptText="Enter Meeting Time" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="MeetingPlatform" promptText="Enter Meeting Platform" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="MeetingDescription" promptText="Enter Meeting Description" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting ID :">
                     <font>
                         <Font name="System Bold" size="12.0" />
@@ -83,7 +83,7 @@
                 <ChoiceBox fx:id="MeetingID" prefHeight="25.0" prefWidth="356.0" GridPane.columnIndex="1" />
             </children>
         </GridPane>
-        <Button fx:id="ClearButton" layoutX="146.0" layoutY="420.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: black; -fx-font-weight: bold; -fx-background-radius: 100;" text="CLEAR" textFill="WHITE">
+        <Button fx:id="ClearButton" layoutX="200.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleClearButton" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: black; -fx-font-weight: bold; -fx-background-radius: 100;" text="CLEAR" textFill="WHITE">
             <font>
                 <Font name="Arial Black" size="12.0" />
             </font>
@@ -97,9 +97,9 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Label fx:id="SuccessfulMessage" layoutX="196.0" layoutY="452.0" prefHeight="32.0" prefWidth="427.0">
+        <Label fx:id="SuccessfulMessage" alignment="CENTER" layoutX="13.0" layoutY="452.0" prefHeight="36.0" prefWidth="775.0">
             <font>
-                <Font size="25.0" />
+                <Font name="System Bold" size="18.0" />
             </font>
         </Label>
     </children>

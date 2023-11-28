@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="43c1d61e-7a5f-45d6-a606-5e89367af622" name="Changes" comment="View Events and Meetings part done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleEventsScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleEventsScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleMeetingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/ScheduleMeetingScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEvents.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEvents.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetingsController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701153724749</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="View Events and Meetings part done">
+      <option name="closed" value="true" />
+      <created>1701159014028</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701159014028</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
