@@ -2,7 +2,6 @@ package com.example.sacms_grp30;
 
 import com.example.sacms_grp30.db.DBConnection;
 import com.example.sacms_grp30.model.ClubAdvisor;
-import com.example.sacms_grp30.model.Staff;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,7 +9,10 @@ import javafx.scene.control.TextField;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClubAdvisorRegisterController {
     @FXML
@@ -18,9 +20,6 @@ public class ClubAdvisorRegisterController {
 
     @FXML
     private Button btnRegister;
-
-    @FXML
-    private TextField txtConfirmPassword;
 
     @FXML
     private TextField txtEmail;
@@ -34,8 +33,6 @@ public class ClubAdvisorRegisterController {
     @FXML
     private TextField txtPassword;
 
-    @FXML
-    private TextField txtStaffID;
 
 
     @FXML
@@ -45,33 +42,100 @@ public class ClubAdvisorRegisterController {
 
     @FXML
     void registerClubAdvisor(ActionEvent event) {
-        Staff staff = new Staff();
-        staff.setStaffId(txtStaffID.getText());
-        staff.setFirstName(txtFirstName.getText());
-        staff.setLastName(txtLastName.getText());
-        staff.setEmail(txtEmail.getText());
-        staff.setPassword(txtPassword.getText());
 
         ClubAdvisor clubAdvisor = new ClubAdvisor();
-        clubAdvisor.setStaffId(txtStaffID.getText());
-        clubAdvisor.setClubAdvisorId("CA001");
+        clubAdvisor.setClubAdvisorId(autoGenerateClubAdvisorId());
+        clubAdvisor.setFirstName(txtFirstName.getText());
+        clubAdvisor.setLastName(txtLastName.getText());
+        clubAdvisor.setEmail(txtEmail.getText());
+        clubAdvisor.setPassword(txtPassword.getText());
 
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO staff VALUES (?,?,?,?,?)";
-        String advisorSql = "INSERT INTO club_advisor VALUES (?,?)";
+        String sql = "INSERT INTO club_advisor VALUES (?,?,?,?,?)";
+
+        if(isClubAdvisorExists(clubAdvisor.getEmail())){
+            System.out.println("This user already exists");
+            return;
+        }
+
+        if(!isValidEmail(clubAdvisor.getEmail())){
+            System.out.println("THis email invalid");
+            return;
+        }
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,staff.getStaffId());
-            preparedStatement.setString(2,staff.getFirstName());
-            preparedStatement.setString(3,staff.getLastName());
-            preparedStatement.setString(4,staff.getEmail());
-            preparedStatement.setString(5, staff.getPassword());
+            preparedStatement.setString(1,clubAdvisor.getClubAdvisorId());
+            preparedStatement.setString(2,clubAdvisor.getFirstName());
+            preparedStatement.setString(3,clubAdvisor.getLastName());
+            preparedStatement.setString(4,clubAdvisor.getEmail());
+            preparedStatement.setString(5, clubAdvisor.getPassword());
             preparedStatement.executeUpdate();
 
-            PreparedStatement preparedStatement1 = connection.prepareStatement(advisorSql);
-            preparedStatement1.setString(1,clubAdvisor.getClubAdvisorId());
-            preparedStatement1.setString(2,clubAdvisor.getStaffId());
-            preparedStatement1.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean isValidEmail(String email){
+        if(!email.contains("@")){
+            System.out.println("@ is missing");
+            return false;
+        }else{
+            String[] split = email.split("@");
+            if(split[1].equals("gmail.com")){
+                System.out.println("valid email");
+                return true;
+            }else{
+                System.out.println("not a gmail");
+                return false;
+            }
+        }
+    }
+
+    public boolean isClubAdvisorExists(String email){
+        String sql="SELECT * FROM club_advisor";
+        Connection connection = DBConnection.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                if(resultSet.getString("email").equals(email)){
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
+    }
+
+    public String autoGenerateClubAdvisorId(){
+        List<String> clubAdvisorIDs=new ArrayList<>();
+        String sql="SELECT * FROM club_advisor";
+        Connection connection = DBConnection.getInstance().getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                clubAdvisorIDs.add(resultSet.getString("club_advisor_id"));
+            }
+
+            if(clubAdvisorIDs.isEmpty()){
+                return "CA001";
+            }else {
+                String[] split = clubAdvisorIDs.get(clubAdvisorIDs.size() - 1).split("CA");
+                int idNumber = Integer.parseInt(split[1]);
+                idNumber += 1;
+                if (idNumber < 9) {
+                    return "CA00" + idNumber;
+                } else if (idNumber < 99) {
+                    return "CA0" + idNumber;
+                } else {
+                    return "CA" + idNumber;
+                }
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

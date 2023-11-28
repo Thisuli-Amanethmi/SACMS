@@ -24,7 +24,7 @@
       </ImageView>
       <TextField fx:id="txtSearchClubName" layoutX="260.0" layoutY="140.0" prefHeight="26.0" prefWidth="281.0" promptText="Search Club Name" />
       <Button fx:id="btnSearch" layoutX="555.0" layoutY="140.0" mnemonicParsing="false" onAction="#searchClubName" prefHeight="26.0" prefWidth="35.0" style="-fx-background-color: white;" text="Button" />
-      <ImageView fitHeight="22.0" fitWidth="29.0" layoutX="561.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="22.0" fitWidth="29.0" layoutX="561.0" layoutY="140.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@search.png" />
          </image>
