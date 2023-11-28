@@ -19,7 +19,7 @@
                   <Image url="@SACMS_3.png" />
                </image>
             </ImageView>
-            <TextField fx:id="emailTxt" layoutX="362.0" layoutY="216.0" prefHeight="31.0" prefWidth="334.0" promptText="john.20205748@iit.ac.lk" />
+            <TextField fx:id="studentIDTxt" layoutX="362.0" layoutY="216.0" prefHeight="31.0" prefWidth="334.0" promptText="ex: S001" />
                 <Button fx:id="logInButton" layoutX="337.0" layoutY="360.0" mnemonicParsing="false" onAction="#logInButtonOnClick" prefHeight="56.0" prefWidth="127.0" style="-fx-background-color: #000000;" text="Log In" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                     <font>
                         <Font name="System Bold" size="15.0" />
@@ -38,7 +38,7 @@
                </graphic>
             </Button>
             <PasswordField fx:id="password" layoutX="359.0" layoutY="268.0" prefHeight="32.0" prefWidth="340.0" promptText="********" />
-            <Label layoutX="183.0" layoutY="216.0" prefHeight="30.0" prefWidth="145.0" text="Email             : ">
+            <Label layoutX="183.0" layoutY="216.0" prefHeight="30.0" prefWidth="145.0" text="Student ID     : ">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
