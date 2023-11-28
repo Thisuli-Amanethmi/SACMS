@@ -1,7 +1,7 @@
 package com.example.sacms_grp30;
 
 import com.example.sacms_grp30.db.DBConnection;
-import com.example.sacms_grp30.model.Staff;
+import com.example.sacms_grp30.model.ClubAdvisor;
 import com.example.sacms_grp30.tables.TableClubAdvisorManageClub;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -178,7 +178,7 @@ public class ClubAdvisorManageClubController implements Initializable {
                 for(String letter:clubNameSearchSplit){
                     if(clubName.contains(letter)){
                         TableClubAdvisorManageClub club=new TableClubAdvisorManageClub();
-                        Staff clubAdvisor = getClubAdvisor(resultSet.getString("club_advisor_id"));
+                        ClubAdvisor clubAdvisor = getClubAdvisor(resultSet.getString("club_advisor_id"));
 
                         club.setClubAdvisorID(resultSet.getString("club_advisor_id"));
                         club.setClubAdvisorName(clubAdvisor.getFirstName()+" "+clubAdvisor.getLastName());
@@ -266,7 +266,7 @@ public class ClubAdvisorManageClubController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 TableClubAdvisorManageClub club=new TableClubAdvisorManageClub();
-                Staff clubAdvisor = getClubAdvisor(resultSet.getString("club_advisor_id"));
+                ClubAdvisor clubAdvisor = getClubAdvisor(resultSet.getString("club_advisor_id"));
 
                 club.setClubAdvisorID(resultSet.getString("club_advisor_id"));
                 club.setClubAdvisorName(clubAdvisor.getFirstName()+" "+clubAdvisor.getLastName());
@@ -286,7 +286,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         }
     }
 
-    private Staff getClubAdvisor(String clubAdvisorId) {
+    private ClubAdvisor getClubAdvisor(String clubAdvisorId) {
         String sql="SELECT * FROM club_advisor";
         //session between java application and the database
         Connection connection = DBConnection.getInstance().getConnection();
@@ -296,17 +296,13 @@ public class ClubAdvisorManageClubController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 if(resultSet.getString("club_advisor_id").equals(clubAdvisorId)){
-                    String staffSQL="SELECT * FROM staff";
-                    PreparedStatement staffStatement = connection.prepareStatement(staffSQL);
-                    ResultSet staffResultSet = staffStatement.executeQuery();
-                    while(staffResultSet.next()){
-                        if(staffResultSet.getString("staff_id").equals(resultSet.getString("staff_id"))){
-                            Staff staff=new Staff();
-                            staff.setFirstName(staffResultSet.getString("first_name"));
-                            staff.setLastName(staffResultSet.getString("last_name"));
-                            return staff;
-                        }
-                    }
+                    ClubAdvisor advisor=new ClubAdvisor();
+                    advisor.setClubAdvisorId(resultSet.getString("club_advisor_id"));
+                    advisor.setFirstName(resultSet.getString("first_name"));
+                    advisor.setLastName(resultSet.getString("last_name"));
+
+                    return advisor;
+
                 }
             }
         } catch (SQLException e) {
