@@ -8,4 +8,7 @@ module com.example.cwsample {
 
     exports com.example.sacms_grp30;
     opens com.example.sacms_grp30 to javafx.fxml;
+    opens com.example.sacms_grp30.model;
+    opens com.example.sacms_grp30.tables;
+
 }

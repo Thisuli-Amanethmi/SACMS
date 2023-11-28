@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorViewClubController">
    <children>
@@ -22,9 +23,9 @@
             <Image url="@BackButton.png" />
          </image>
       </ImageView>
-      <TextField layoutX="236.0" layoutY="126.0" prefHeight="26.0" prefWidth="328.0" promptText="Search Club Name" />
+      <TextField fx:id="txtSearchClubName" layoutX="236.0" layoutY="126.0" prefHeight="26.0" prefWidth="328.0" promptText="Search Club Name" />
       <Button fx:id="btnSearch" layoutX="583.0" layoutY="126.0" mnemonicParsing="false" onAction="#searchClubName" prefHeight="26.0" prefWidth="33.0" style="-fx-background-color: white;" text="Button" />
-      <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="583.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="583.0" layoutY="126.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@search.png" />
          </image>
@@ -43,5 +44,10 @@
             </TableView>
          </content>
       </ScrollPane>
+      <Button fx:id="btnClear" layoutX="625.0" layoutY="126.0" mnemonicParsing="false" onAction="#clearData" prefHeight="26.0" prefWidth="59.0" style="-fx-background-color: black;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

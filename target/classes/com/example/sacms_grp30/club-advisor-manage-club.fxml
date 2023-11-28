@@ -26,14 +26,14 @@
       </ImageView>
       <TextField fx:id="txtSearchClubName" layoutX="79.0" layoutY="123.0" prefHeight="26.0" prefWidth="255.0" promptText="Search Club Name" />
       <Button fx:id="btnSearch" layoutX="346.0" layoutY="123.0" mnemonicParsing="false" onAction="#searchClub" prefHeight="26.0" prefWidth="32.0" style="-fx-background-color: white;" />
-      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="349.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="349.0" layoutY="123.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@search.png" />
          </image>
       </ImageView>
       <ScrollPane layoutX="63.0" layoutY="177.0" prefHeight="227.0" prefWidth="582.0">
          <content>
-            <TableView fx:id="tblClub" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="224.0" prefWidth="579.0">
+            <TableView fx:id="tblClub" cacheShape="false" centerShape="false" focusTraversable="false" onMouseClicked="#loadDataToTextFields" prefHeight="224.0" prefWidth="579.0">
               <columns>
                 <TableColumn fx:id="colClubAdvisorName" editable="false" prefWidth="118.0" sortable="false" text="Club Advisor Name" />
                 <TableColumn fx:id="colClubID" editable="false" prefWidth="60.0" sortable="false" text="Club ID" />
@@ -84,6 +84,11 @@
          </font>
       </Button>
       <Button fx:id="btnCheckMembers" layoutX="673.0" layoutY="291.0" mnemonicParsing="false" onAction="#loadCheckMembers" prefHeight="32.0" prefWidth="142.0" style="-fx-background-color: Black;" text="Check Members" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClear" layoutX="397.0" layoutY="123.0" mnemonicParsing="false" onAction="#clearData" prefHeight="9.0" prefWidth="67.0" style="-fx-background-color: Black;" text="Clear" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font>
