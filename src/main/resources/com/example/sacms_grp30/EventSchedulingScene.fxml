@@ -6,23 +6,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.EventSchedulingController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.EventSchedulingController">
    <children>
       <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@EventSchedulingScene.png" />
          </image>
       </ImageView>
-      <Button fx:id="EventButton" layoutX="499.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleEventButton" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: black;" text="SCHEDULE EVENTS" textFill="WHITE">
+      <Button fx:id="EventButton" layoutX="425.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleEventButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: black; -fx-background-radius: 100;" text="SCHEDULE EVENTS" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="MeetingButton" layoutX="499.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleMeetingButton" prefHeight="32.0" prefWidth="201.0" style="-fx-background-color: black;" text="SCHEDULE MEETINGS" textFill="WHITE">
+      <Button fx:id="MeetingButton" layoutX="425.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleMeetingButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: black; -fx-background-radius: 100;" text="SCHEDULE MEETINGS" textFill="WHITE">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" />
+      <Button fx:id="ViewEventButton" layoutX="619.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleViewEventsButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: black; -fx-background-radius: 100;" text="VIEW/EDIT EVENTS" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="ViewMeetingsButton" layoutX="619.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleViewMeetingsButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: black; -fx-background-radius: 100;" text="VIEW/EDIT MEETINGS" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="BackButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="32.0" prefWidth="54.0" style="-fx-background-color: white;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@BackButton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
