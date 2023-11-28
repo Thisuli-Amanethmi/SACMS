@@ -4,9 +4,15 @@ import com.example.sacms_grp30.db.DBConnection;
 import com.example.sacms_grp30.model.ClubAdvisor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +42,17 @@ public class ClubAdvisorRegisterController {
 
 
     @FXML
-    void loadHome(ActionEvent event) {
+    void loadHome(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnBack.getScene().getWindow();
+        window.close();
+
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Club Advisor");
+        stage.show();
 
     }
 
@@ -54,12 +70,17 @@ public class ClubAdvisorRegisterController {
         String sql = "INSERT INTO club_advisor VALUES (?,?,?,?,?)";
 
         if(isClubAdvisorExists(clubAdvisor.getEmail())){
-            System.out.println("This user already exists");
+            new Alert(Alert.AlertType.ERROR,"This User is already exists !").show();
             return;
         }
 
         if(!isValidEmail(clubAdvisor.getEmail())){
-            System.out.println("THis email invalid");
+            new Alert(Alert.AlertType.ERROR,"Invalid email !").show();
+            return;
+        }
+
+        if(!isDataFilled()){
+            new Alert(Alert.AlertType.WARNING,"Please fill all details !").show();
             return;
         }
 
@@ -71,6 +92,8 @@ public class ClubAdvisorRegisterController {
             preparedStatement.setString(4,clubAdvisor.getEmail());
             preparedStatement.setString(5, clubAdvisor.getPassword());
             preparedStatement.executeUpdate();
+
+            new Alert(Alert.AlertType.INFORMATION,"User added successfully !").show();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -140,5 +163,12 @@ public class ClubAdvisorRegisterController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public boolean isDataFilled(){
+        if(txtFirstName.getText().isBlank()||txtLastName.getText().isBlank()||txtEmail.getText().isBlank()||
+        txtPassword.getText().isBlank()) return false;
+
+        return true;
     }
 }
