@@ -1,18 +1,27 @@
 package com.example.sacms_grp30;
 
 public class ScheduledMeetings {
+    private String meetingId;
     private String meetingTopic;
     private String meetingDate;
     private String meetingTime;
     private String meetingPlatform;
     private String meetingDescription;
 
-    public ScheduledMeetings(String meetingTopic, String meetingDate, String meetingTime, String meetingPlatform, String meetingDescription) {
+    public ScheduledMeetings(String meetingId, String meetingTopic, String meetingDate, String meetingTime, String meetingPlatform, String meetingDescription) {
+        this.meetingId = meetingId;
         this.meetingTopic = meetingTopic;
         this.meetingDate = meetingDate;
         this.meetingTime = meetingTime;
         this.meetingPlatform = meetingPlatform;
         this.meetingDescription = meetingDescription;
+    }
+    public String getMeetingId() {
+        return meetingId;
+    }
+
+    public void setMeetingId(String meetingId) {
+        this.meetingId = meetingId;
     }
 
     public String getMeetingTopic() {
@@ -55,4 +64,3 @@ public class ScheduledMeetings {
         this.meetingDescription = meetingDescription;
     }
 }
-

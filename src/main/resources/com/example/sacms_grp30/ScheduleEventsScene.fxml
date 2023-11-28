@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -41,38 +42,45 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name :" wrappingWidth="176.13671875">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event ID :">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date :" wrappingWidth="176.13671875" GridPane.rowIndex="1">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name :" wrappingWidth="176.13671875" GridPane.rowIndex="1">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Time :" wrappingWidth="176.13671875" GridPane.rowIndex="2">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date :" wrappingWidth="176.13671875" GridPane.rowIndex="2">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Location" wrappingWidth="176.13671875" GridPane.rowIndex="3">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Time :" wrappingWidth="176.13671875" GridPane.rowIndex="3">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <TextField fx:id="EventName" GridPane.columnIndex="1" />
-                <TextField fx:id="EventTime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField fx:id="EventLocation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <TextField fx:id="EventDescription" prefHeight="4.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description :" wrappingWidth="176.13671875" GridPane.rowIndex="4">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Location" wrappingWidth="176.13671875" GridPane.rowIndex="4">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Text>
-                <DatePicker fx:id="EventDate" prefHeight="26.0" prefWidth="333.0" promptText=" Select Your Date" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="EventName" promptText="Enter the Event Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="EventTime" promptText="Enter Event Time" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="EventLocation" promptText="Enter Event Location" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="EventDescription" prefHeight="4.0" prefWidth="294.0" promptText="Enter Event Description" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description :" wrappingWidth="176.13671875" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Text>
+                <DatePicker fx:id="EventDate" prefHeight="26.0" prefWidth="333.0" promptText=" Select Your Date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ChoiceBox fx:id="EventID" prefHeight="26.0" prefWidth="334.0" GridPane.columnIndex="1" />
             </children>
         </GridPane>
         <Button fx:id="BackButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="32.0" prefWidth="54.0" style="-fx-background-color: white;" textFill="WHITE">

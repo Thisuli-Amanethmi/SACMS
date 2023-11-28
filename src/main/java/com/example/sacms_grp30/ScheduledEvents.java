@@ -1,6 +1,7 @@
 package com.example.sacms_grp30;
 
 public class ScheduledEvents {
+    private String eventId;
     private String eventName;
     private String eventDate;
     private String eventTime;
@@ -8,7 +9,10 @@ public class ScheduledEvents {
     private String eventDescription;
 
 
-    public ScheduledEvents(String eventName, String eventDate, String eventTime, String eventLocation, String eventDescription) {
+
+
+    public ScheduledEvents(String eventId, String eventName, String eventDate, String eventTime, String eventLocation, String eventDescription) {
+        this.eventId = eventId;
         this.eventName = eventName;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
@@ -17,6 +21,12 @@ public class ScheduledEvents {
 
     }
 
+    public String getEventId() {
+        return eventId;
+    }
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
+    }
     public String getEventName() {
         return eventName;
     }
