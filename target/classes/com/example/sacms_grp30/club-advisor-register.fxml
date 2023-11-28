@@ -26,12 +26,6 @@
             <Image url="@BackButton.png" />
          </image>
       </ImageView>
-      <Text layoutX="245.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff ID">
-         <font>
-            <Font name="SansSerif Bold" size="17.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtStaffID" layoutX="408.0" layoutY="153.0" prefHeight="26.0" prefWidth="196.0" />
       <Text layoutX="244.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
          <font>
             <Font name="SansSerif Bold" size="17.0" />
@@ -56,11 +50,5 @@
          </font>
       </Text>
       <TextField fx:id="txtPassword" layoutX="408.0" layoutY="340.0" prefHeight="26.0" prefWidth="196.0" />
-      <Text layoutX="244.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password">
-         <font>
-            <Font name="SansSerif Bold" size="17.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtConfirmPassword" layoutX="408.0" layoutY="387.0" prefHeight="26.0" prefWidth="196.0" />
    </children>
 </AnchorPane>
