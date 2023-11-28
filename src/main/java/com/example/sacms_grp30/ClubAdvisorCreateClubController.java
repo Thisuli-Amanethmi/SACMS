@@ -1,8 +1,14 @@
 package com.example.sacms_grp30;
 
+import com.example.sacms_grp30.db.DBConnection;
+import com.example.sacms_grp30.model.Club;
+import com.example.sacms_grp30.model.ClubAdvisor;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,8 +17,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class ClubAdvisorCreateClubController {
+public class ClubAdvisorCreateClubController implements Initializable {
     @FXML
     private Button btnBack;
 
@@ -57,6 +68,40 @@ public class ClubAdvisorCreateClubController {
 
     @FXML
     void saveData(ActionEvent event) {
+        Club club = new Club();
+        club.setClubId("C002");
+        club.setClubAdvisorId(txtClubAdvisorID.getText());
+        club.setClubName(txtClubName.getText());
+        club.setClubCategory(comboClubCategory.getSelectionModel().getSelectedItem());
+        club.setDescription(txtDescription.getText());
+
+        Connection connection = DBConnection.getInstance().getConnection();
+        String sql="INSERT INTO club VALUES (?,?,?,?,?)";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,club.getClubId());
+            preparedStatement.setString(2,club.getClubAdvisorId());
+            preparedStatement.setString(3,club.getClubName());
+            preparedStatement.setString(4,club.getClubCategory());
+            preparedStatement.setString(5,club.getDescription());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<String> category = FXCollections.observableArrayList();
+        category.add("Academic");
+        category.add("Technology");
+        category.add("Arts and Creativity");
+        category.add("Service");
+        category.add("Sports");
+
+        comboClubCategory.setItems(category);
 
     }
 }

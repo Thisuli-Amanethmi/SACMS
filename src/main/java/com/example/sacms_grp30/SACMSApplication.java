@@ -13,7 +13,7 @@ public class SACMSApplication extends Application {
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
         primaryStage.setResizable(false);
-        Parent root = FXMLLoader.load(getClass().getResource("club-advisor.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-menu.fxml"));
         primaryStage.setTitle("SCAMS");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
