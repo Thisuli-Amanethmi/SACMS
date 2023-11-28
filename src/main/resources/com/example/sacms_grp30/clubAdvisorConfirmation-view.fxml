@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorConfirmationViewController">
+   <center>
+      <AnchorPane prefHeight="285.0" prefWidth="452.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="290.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SACMS_ClubAdvisorPassword.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="enterButton" layoutX="127.0" layoutY="222.0" mnemonicParsing="false" onAction="#enterButtonOnClick" prefHeight="38.0" prefWidth="77.0" style="-fx-background-color: black;" text="Enter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="closeButton" layoutX="236.0" layoutY="222.0" mnemonicParsing="false" onAction="#closeButtonOnClick" prefHeight="38.0" prefWidth="77.0" style="-fx-background-color: black;" text="Close" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="58.0" layoutY="134.0" text="Enter Club Advisor Password  :">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordClubPassword" layoutX="226.0" layoutY="157.0" prefHeight="26.0" prefWidth="160.0" promptText="********" />
+            <Label fx:id="errorMessage" layoutX="150.0" layoutY="90.0" prefHeight="23.0" prefWidth="152.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
