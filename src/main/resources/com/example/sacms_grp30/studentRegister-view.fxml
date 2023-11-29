@@ -44,7 +44,10 @@
                   <TextField fx:id="IDtxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your ID (ex: S001)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                       <TextField fx:id="nameTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your name (ex: Lisa)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="emailTxt" prefHeight="30.0" prefWidth="406.0" promptText="enter your email (ex: lisa001@gmail.com)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                      <PasswordField fx:id="password" prefHeight="30.0" prefWidth="404.0" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                      <PasswordField fx:id="password" prefHeight="30.0" prefWidth="404.0" promptText="password should contain 8 letters. At least 1 capital letter, 1 simple letter &amp; 1 number" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="9.0" />
+                     </font></PasswordField>
                   <PasswordField fx:id="confirmPassword" prefHeight="30.0" prefWidth="406.0" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                       <Label prefHeight="30.0" prefWidth="238.0" text="Name                           :" GridPane.rowIndex="2">
                           <font>

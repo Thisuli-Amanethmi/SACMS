@@ -106,7 +106,6 @@ public class StudentLogInViewController {
         if(studentIDTxt.getText().equals("Invalid ID") || password.getText().equals("Invalid Password")) {
             logInMessageTxt.setText("Unsuccessful log in !!! Enter valid data !!!");
         } else {
-            System.out.println("1111");
             navigateLogInStudent(actionEvent); // all good
         }
     }
@@ -115,11 +114,9 @@ public class StudentLogInViewController {
 
     public void navigateLogInStudent(ActionEvent actionEvent) throws SQLException {
         joinClubStudentID[0] = "S001";
-        System.out.println("aaaaa");
 
         joinClubStudentID[0] = studentIDTxt.getText();
         System.out.println(joinClubStudentID[0]);
-        System.out.println("BBBBBBB");
 
         Connection connection = DBConnection.getInstance().getConnection(); // to use the created Connection in DBConnection class
 
