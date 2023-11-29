@@ -157,7 +157,21 @@ public class StudentViewEventsViewController implements Initializable {
         previousStage.close();
     }
 
-    public void registerEventButtonOnClick(ActionEvent actionEvent) {
+    public void registerEventButtonOnClick(ActionEvent actionEvent) throws SQLException {
+        navigateRegisterEvent(actionEvent);
+    }
+
+    private void navigateRegisterEvent(ActionEvent actionEvent) throws SQLException {
+        String studentID = StudentLogInViewController.joinClubStudentID[0];
+        String eventIDJoin = eventNameRegisterTxt.getText();
+
+        Connection connection = DBConnection.getInstance().getConnection(); // to use the created Connection in DBConnection class
+        Statement statement = connection.createStatement(); // to execute sql queries
+
+        String query2 = "Insert INTO event_student VALUES ("; // to add student details to the database
+        System.out.println(query2 + "'" + eventIDJoin + "', '" + studentID + "');");
+        statement.executeUpdate(query2 + "'" + eventIDJoin + "', '" + studentID + "');"); // executing the query
+
         String successfulMessage = "Successfully Registered !!!";
         registerEventMessageLabel.setText(successfulMessage);
     }

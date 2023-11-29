@@ -143,9 +143,22 @@ public class StudentViewClubViewController implements Initializable {
     }
 
     public void joinClubButtonOnClick(ActionEvent actionEvent) throws Exception {
+        navigateJoin(actionEvent);
+    }
+
+    private void navigateJoin(ActionEvent actionEvent) throws SQLException {
+        String studentID = StudentLogInViewController.joinClubStudentID[0];
+        String clubIDJoin = clubNameJoinTxt.getText();
+
+        Connection connection = DBConnection.getInstance().getConnection(); // to use the created Connection in DBConnection class
+        Statement statement = connection.createStatement(); // to execute sql queries
+
+        String query2 = "Insert INTO club_student VALUES ("; // to add student details to the database
+        System.out.println(query2 + "'" + clubIDJoin + "', '" + studentID + "');");
+        statement.executeUpdate(query2 + "'" + clubIDJoin + "', '" + studentID + "');"); // executing the query
+
         String successfulMessage = "Successfully Joined !!!";
         joinClubMessageLabel.setText(successfulMessage);
-
     }
 
 }
