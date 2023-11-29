@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorLoginController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SACMS_3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="217.0" layoutY="220.0" text="Club Advisor ID">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtClubAdvisorID" layoutX="358.0" layoutY="215.0" prefHeight="26.0" prefWidth="222.0" />
+      <Label layoutX="217.0" layoutY="273.0" text="Password">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPassword" layoutX="358.0" layoutY="268.0" prefHeight="26.0" prefWidth="222.0" />
+      <Button fx:id="btnLogin" layoutX="355.0" layoutY="383.0" mnemonicParsing="false" onAction="#loadClubAdvisorMenu" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: black;" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="47.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadClubAdvisorHome" prefHeight="38.0" prefWidth="44.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="38.0" fitWidth="44.0" layoutX="47.0" layoutY="39.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BackButton.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

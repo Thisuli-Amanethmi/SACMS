@@ -164,6 +164,7 @@ public class StudentRegisterViewController {
                     || password.getText().equals("Password is too short") || password.getText().equals("Invalid Password")) {
                 messageBox.setText("Registration unsuccessful !!! Enter valid data !!!");
             } else {
+                System.out.println("1111");
                 navigateRegisterStudentDatabase(); // all good
             }
         } else {
@@ -176,6 +177,7 @@ public class StudentRegisterViewController {
     }
 
     private void navigateRegisterStudentDatabase() throws SQLException {
+        System.out.println("222");
         String uiStudentID = IDtxt.getText();
         String uiStudentName = nameTxt.getText();
         String uiStudentEmail = emailTxt.getText();
@@ -246,25 +248,13 @@ public class StudentRegisterViewController {
 
             System.out.println(query2 + "'" + uiStudentID + ", '" + uiStudentName + "', '" + uiStudentEmail + "', '" + uiStudentPassword + "');");
 
+            System.out.println("www");
             messageBox.setText("Successful Student Registration !!!");
         }
 
-        connection.close();
+        // connection.close();
 
         System.out.println("Connection closed.");
-    }
-
-    public void registerButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateRegister(actionEvent);
-    }
-
-    private void navigateRegister(ActionEvent actionEvent) throws Exception {
-        // check conditions
-        String messageSuccessful = "Successfully Registered !!!";
-        String messageInputInvalid = "Enter Valid Data !!!";
-        String messageAlreadyRegister = "You have already registered.";
-        messageBox.setText(messageSuccessful);
-
     }
 
     public void backButtonOnClick(ActionEvent actionEvent) throws Exception {

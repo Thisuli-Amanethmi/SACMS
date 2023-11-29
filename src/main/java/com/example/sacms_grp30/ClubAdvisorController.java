@@ -27,19 +27,48 @@ public class ClubAdvisorController {
 
     @FXML
     void loadClubAdvisorLogin(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnBack.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-login.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //when login set the window title to this
+        stage.setTitle("Club Advisor - Login");
+        stage.show();
     }
 
     @FXML
     void loadClubAdvisorRegister(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnBack.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("club-advisor-register.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //when login set the window title to this
+        stage.setTitle("Club Advisor - Register");
+        stage.show();
     }
 
     @FXML
     void loadHome(ActionEvent event) throws IOException {
+        //closing the existing UI
+        Stage window = (Stage) btnBack.getScene().getWindow();
+        window.close();
 
+        //opening a new window on a newly created stage
+        Parent root = FXMLLoader.load(getClass().getResource("SACMS-view.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //when login set the window title to this
+        stage.setTitle("SACMS");
+        stage.show();
     }
-
 }
 
 

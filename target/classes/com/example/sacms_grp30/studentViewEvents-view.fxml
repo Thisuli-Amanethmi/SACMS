@@ -42,10 +42,10 @@
                     <columns>
                         <TableColumn fx:id="eventIDColumn" prefWidth="99.199951171875" text="Event ID" />
                         <TableColumn fx:id="eventNameColumn" prefWidth="147.99998474121094" text="Event Name" />
-                        <TableColumn fx:id="clubNameColumn" prefWidth="116.79998779296875" text="Club Name" />
                   <TableColumn fx:id="eventDateColumn" prefWidth="84.79998779296875" text="Date" />
                   <TableColumn fx:id="eventTimeColumn" prefWidth="76.79998779296875" text="Time" />
                   <TableColumn fx:id="eventLocationColumn" prefWidth="104.00003662109373" text="Location" />
+                  <TableColumn fx:id="eventDescriptionColumn" prefWidth="116.00003662109373" text="Description" />
                     </columns>
                 </TableView>
                 <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="471.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">

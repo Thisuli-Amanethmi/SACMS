@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,20 +21,13 @@
             <Image url="@BackButton.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtSearchClubName" layoutX="260.0" layoutY="140.0" prefHeight="26.0" prefWidth="281.0" promptText="Search Club Name" />
-      <Button fx:id="btnSearch" layoutX="555.0" layoutY="140.0" mnemonicParsing="false" onAction="#searchClubName" prefHeight="26.0" prefWidth="35.0" style="-fx-background-color: white;" text="Button" />
-      <ImageView fitHeight="22.0" fitWidth="29.0" layoutX="561.0" layoutY="140.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@search.png" />
-         </image>
-      </ImageView>
-      <ScrollPane layoutX="85.0" layoutY="189.0" prefHeight="271.0" prefWidth="633.0">
+      <ScrollPane layoutX="75.0" layoutY="136.0" prefHeight="324.0" prefWidth="643.0">
          <content>
-            <TableView fx:id="tblClubMembers" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="270.0" prefWidth="634.0">
+            <TableView fx:id="tblClubMembers" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="321.0" prefWidth="637.0">
               <columns>
-                <TableColumn fx:id="colStudentID" editable="false" prefWidth="121.0" sortable="false" text="Student ID" />
-                <TableColumn fx:id="colStudentName" editable="false" prefWidth="282.0" sortable="false" text="Student Name" />
-                  <TableColumn fx:id="colEmail" editable="false" prefWidth="214.0" sortable="false" text="Email" />
+                <TableColumn fx:id="colStudentID" editable="false" prefWidth="150.0" sortable="false" text="Student ID" />
+                <TableColumn fx:id="colStudentName" editable="false" prefWidth="253.0" sortable="false" text="Student Name" />
+                  <TableColumn fx:id="colEmail" editable="false" prefWidth="233.0" sortable="false" text="Email" />
               </columns>
             </TableView>
          </content>
