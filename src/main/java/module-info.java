@@ -3,7 +3,6 @@ module com.example.cwsample {
     requires javafx.fxml;
     requires java.sql;
     requires java.logging;
-    requires mysql.connector.j;
 
 
     exports com.example.sacms_grp30;
