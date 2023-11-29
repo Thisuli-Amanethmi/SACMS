@@ -1,6 +1,7 @@
 package com.example.sacms_grp30;
 
 public class ScheduledEvents {
+    // Private instance variables to store event details
     private String eventId;
     private String eventName;
     private String eventDate;
@@ -8,7 +9,7 @@ public class ScheduledEvents {
     private String eventLocation;
     private String eventDescription;
 
-
+    // Constructor to initialize the ScheduledEvents object
     public ScheduledEvents(String eventId, String eventName, String eventDate, String eventTime, String eventLocation, String eventDescription) {
         this.eventId = eventId;
         this.eventName = eventName;
@@ -19,6 +20,7 @@ public class ScheduledEvents {
 
     }
 
+    //Getters and Setters
     public String getEventId() {
         return eventId;
     }

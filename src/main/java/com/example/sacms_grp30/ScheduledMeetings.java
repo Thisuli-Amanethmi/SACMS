@@ -8,6 +8,7 @@ public class ScheduledMeetings {
     private String meetingPlatform;
     private String meetingDescription;
 
+    // Constructor to initialize the ScheduledEvents object
     public ScheduledMeetings(String meetingId, String meetingTopic, String meetingDate, String meetingTime, String meetingPlatform, String meetingDescription) {
         this.meetingId = meetingId;
         this.meetingTopic = meetingTopic;
@@ -16,6 +17,8 @@ public class ScheduledMeetings {
         this.meetingPlatform = meetingPlatform;
         this.meetingDescription = meetingDescription;
     }
+
+    //Getters and Setters
     public String getMeetingId() {
         return meetingId;
     }
