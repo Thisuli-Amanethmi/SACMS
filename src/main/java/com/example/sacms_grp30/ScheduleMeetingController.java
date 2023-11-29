@@ -1,5 +1,6 @@
 package com.example.sacms_grp30;
 
+import com.example.sacms_grp30.db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,7 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import java.util.ArrayList;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class ScheduleMeetingController {
     @FXML
@@ -32,55 +36,69 @@ public class ScheduleMeetingController {
     private TextField MeetingDescription;
     @FXML
     private Label SuccessfulMessage;
+
     @FXML
     public void initialize() {
-        ObservableList<String> MeetingIDs = FXCollections.observableArrayList("MID001", "MID002", "MID003", "MID004","MID005", "MID006", "MID007", "MID008");
+        ObservableList<String> MeetingIDs = FXCollections.observableArrayList("MID001", "MID002", "MID003", "MID004", "MID005", "MID006", "MID007", "MID008");
         MeetingID.setItems(MeetingIDs);
     }
-    public void handleBackButton() throws Exception{
+
+    public void handleBackButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("EventSchedulingScene.fxml"));
         Stage window = (Stage) BackButton.getScene().getWindow();
-        window.setScene(new Scene(root,800,500));
-    }
-    public void addMeetingDetails(){
-        ArrayList meeting = new ArrayList();
-
-        meeting.add((MeetingID.getValue().toString()));
-        meeting.add(MeetingTopic.getText());
-        meeting.add(MeetingDate.getValue().toString());
-        meeting.add(MeetingTime.getText());
-        meeting.add(MeetingPlatform.getText());
-        meeting.add(MeetingDescription.getText());
-        Meetings.meetingDetailsList.add(meeting);
-        SuccessfulMessage.setText("Meeting Scheduled Successfully");
+        window.setScene(new Scene(root, 800, 500));
     }
 
-    String existingMeeting;
+    public void addMeetingDetails() {
+        ScheduledMeetings meeting = new ScheduledMeetings(
+                MeetingID.getValue().toString(),
+                MeetingTopic.getText(),
+                MeetingDate.getValue().toString(),
+                MeetingTime.getText(),
+                MeetingPlatform.getText(),
+                MeetingDescription.getText()
+        );
+        Connection connection = DBConnection.getInstance().getConnection();
+        String query = "INSERT INTO meetings (meeting_id, meeting_topic, meeting_date, meeting_time, meeting_platform, meeting_description) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, meeting.getMeetingId());
+            preparedStatement.setString(2, meeting.getMeetingTopic());
+            preparedStatement.setString(3, meeting.getMeetingDate());
+            preparedStatement.setString(4, meeting.getMeetingTime());
+            preparedStatement.setString(5, meeting.getMeetingPlatform());
+            preparedStatement.setString(6, meeting.getMeetingDescription());
+
+            preparedStatement.executeUpdate();
+            SuccessfulMessage.setText("Meeting Scheduled Successfully");
+            clearTextFields();
+        } catch (SQLException e) {
+            if (e.getSQLState().equals("23000") && e.getErrorCode() == 1062) {
+                // Duplicate entry error (SQLState "23000" and ErrorCode 1062)
+                SuccessfulMessage.setText("Meeting ID Already Taken. Please choose another one.");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void handleSubmitButton(ActionEvent event) throws Exception {
         if (MeetingID.getValue() == null && MeetingTopic.getText().isEmpty() && MeetingDate.getValue() == null && MeetingTime.getText().isEmpty() && MeetingPlatform.getText().isEmpty() && MeetingDescription.getText().isEmpty()) {
             SuccessfulMessage.setText("All the fields are Empty. Please Fill!");
-        } else if (MeetingID.getValue() == null ||MeetingTopic.getText().isEmpty() || MeetingDate.getValue() == null || MeetingTime.getText().isEmpty() || MeetingPlatform.getText().isEmpty() || MeetingDescription.getText().isEmpty()) {
+        } else if (MeetingID.getValue() == null || MeetingTopic.getText().isEmpty() || MeetingDate.getValue() == null || MeetingTime.getText().isEmpty() || MeetingPlatform.getText().isEmpty() || MeetingDescription.getText().isEmpty()) {
             SuccessfulMessage.setText("");
             SuccessfulMessage.setText("Please Fill All the fields!");
-        }
-        else if (!(MeetingTime.getText().isEmpty() || MeetingPlatform.getText().isEmpty())) {
-            try{
-                if(existingEntries((String) MeetingID.getValue())){
-                    SuccessfulMessage.setText("Meeting ID Already Taken. Please chose another one.");
-                }
-                else {
-                    addMeetingDetails();
-                }
-            }
-            catch (Exception exception){
-
-            }
+            addMeetingDetails();
+        } else {
+            addMeetingDetails();
         }
     }
+
     public void handleClearButton(ActionEvent event) throws Exception {
         clearTextFields();
         SuccessfulMessage.setText("");
     }
+
     private void clearTextFields() {
         MeetingID.setValue(null);
         MeetingTopic.clear();
@@ -88,16 +106,5 @@ public class ScheduleMeetingController {
         MeetingTime.clear();
         MeetingPlatform.clear();
         MeetingDescription.clear();
-    }
-    public boolean existingEntries(String existingID){
-        boolean idExisting = false;
-        for (int i = 0; i < Meetings.meetingDetailsList.size(); i++) {
-            if (existingID.equals(Meetings.meetingDetailsList.get(i).get(0))) {
-
-                existingMeeting = Meetings.meetingDetailsList.get(i).get(0) + ", " + Meetings.meetingDetailsList.get(i).get(1) + ", " + Meetings.meetingDetailsList.get(i).get(2) + ", " + Meetings.meetingDetailsList.get(i).get(3) + ", " + Meetings.meetingDetailsList.get(i).get(4) + ", " + Meetings.meetingDetailsList.get(i).get(5);
-                idExisting = true;
-            }
-        }
-        return idExisting;
     }
 }

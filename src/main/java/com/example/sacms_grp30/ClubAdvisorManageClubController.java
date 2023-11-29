@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -106,8 +103,6 @@ public class ClubAdvisorManageClubController implements Initializable {
         txtClubName.setText(selectedItem.getClubName());
     }
 
-
-
     @FXML
     void loadCheckMembers(ActionEvent event) throws IOException {
 
@@ -163,6 +158,12 @@ public class ClubAdvisorManageClubController implements Initializable {
 
     @FXML
     void searchClub(ActionEvent event) {
+
+        if(txtSearchClubName.getText().isBlank()){
+            new Alert(Alert.AlertType.WARNING,"Please enter club name before searching !").show();
+            return;
+        }
+
         String[] clubNameSearchSplit = txtSearchClubName.getText().replaceAll("\\s","").toUpperCase().split("");
 
         List<TableClubAdvisorManageClub> viewClubs=new ArrayList<>();
@@ -202,6 +203,12 @@ public class ClubAdvisorManageClubController implements Initializable {
 
     @FXML
     void updateClub(ActionEvent event) {
+
+        if(!isDataFilled()){
+            new Alert(Alert.AlertType.ERROR,"Please enter details before update !").show();
+            return;
+        }
+
         String clubIDText = txtClubID.getText();
         String advisorIDText = txtClubAdvisorID.getText();
         String descriptionText = txtDescription.getText();
@@ -218,6 +225,8 @@ public class ClubAdvisorManageClubController implements Initializable {
 
             preparedStatement.executeUpdate();
 
+            new Alert(Alert.AlertType.INFORMATION,"Club details updated successfully !").show();
+
             loadClubDetails();
 
         } catch (SQLException e) {
@@ -225,8 +234,20 @@ public class ClubAdvisorManageClubController implements Initializable {
         }
     }
 
+    public boolean isDataFilled(){
+        if(txtClubID.getText().isBlank()||txtClubAdvisorID.getText().isBlank()||txtClubName.getText().isBlank()||
+        txtDescription.getText().isBlank()) return false;
+
+        return true;
+    }
+
     @FXML
     void deleteClub(ActionEvent event) {
+        if(txtClubID.getText().isBlank()){
+            new Alert(Alert.AlertType.ERROR,"Please select a club before delete !").show();
+            return;
+        }
+
         String clubIDText = txtClubID.getText();
 
         String clubStudentSQL="DELETE FROM club_student WHERE club_id=?";
@@ -242,6 +263,8 @@ public class ClubAdvisorManageClubController implements Initializable {
 
             clubStudentStatement.executeUpdate();
             clubStatement.executeUpdate();
+
+            new Alert(Alert.AlertType.INFORMATION,"Club Deleted successfully !").show();
 
             loadClubDetails();
 

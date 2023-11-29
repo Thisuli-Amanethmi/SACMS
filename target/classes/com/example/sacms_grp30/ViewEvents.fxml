@@ -46,19 +46,18 @@
         </TableView>
         <Button fx:id="DeleteButton" layoutX="128.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteSubmit" style="-fx-background-color: black;" text="Delete Data" textFill="WHITE" />
         <TextField fx:id="DeleteIdField" layoutX="128.0" layoutY="393.0" prefHeight="25.0" prefWidth="181.0" />
-        <Button fx:id="FindButton" layoutX="320.0" layoutY="393.0" mnemonicParsing="false" onAction="#deleteFind" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: black;" text="Find" textFill="WHITE" />
         <Text layoutX="62.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event ID :">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font></Text>
         <Button fx:id="RefreshButton" layoutX="230.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleRefreshButton" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: black;" text="Refresh" textFill="WHITE" />
-        <Button fx:id="NewEventButton" layoutX="595.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleNewEventButton" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: black;" text="New Event" textFill="WHITE" />
+        <Button fx:id="NewEventButton" layoutX="554.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleNewEventButton" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: black;" text="New Event" textFill="WHITE" />
         <Text layoutX="98.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Event ID to delete an event">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
         </Text>
-        <Text layoutX="545.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click below to Add a new event">
+        <Text layoutX="498.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click below to Add a new event">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
