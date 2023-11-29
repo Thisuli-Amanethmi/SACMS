@@ -5,49 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01ef76d3-bc6f-413f-89fa-25553ac28278" name="Changes" comment="connector added. register updated. comments added">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/ClubSearchModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/EventSearchModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/MeetingSearchModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/ClubSearchModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/EventSearchModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/MeetingSearchModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.2.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.2.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/protobuf-java-3.21.9-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/protobuf-java-3.21.9-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/protobuf-java-3.21.9.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentLogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentLogInViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentRegisterViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentRegisterViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewClubViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewClubViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewEventsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewEventsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewMeetingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewMeetingsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewProfileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewProfileViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewEventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewMeetingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewMeetingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentRegister-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentRegister-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewEvents-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewEvents-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewMeetings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewMeetings-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ClubAdvisorLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ClubAdvisorLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentLogInViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentLogInViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentRegisterViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentRegisterViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewClubViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewClubViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewEventsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewEventsViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewMeetingsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewMeetingsViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewProfileViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewProfileViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewMeetingsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/club-advisor-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/club-advisor-login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/db/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/db/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentRegister-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentRegister-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewEvents-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewEvents-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewMeetings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewMeetings-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +41,6 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -84,16 +55,38 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Merging Nina"
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Nina",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3725681"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SACMSApplication">
+    <configuration name="EventSchedulingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.sacms_grp30.EventSchedulingApplication" />
+      <module name="cwsample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.sacms_grp30.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SACMSApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.sacms_grp30.SACMSApplication" />
       <module name="cwsample" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.sacms_grp30.model.*" />
+          <option name="PATTERN" value="com.example.sacms_grp30.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,6 +97,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SACMSApplication" />
+        <item itemvalue="Application.EventSchedulingApplication" />
         <item itemvalue="Application.SACMSApplication" />
         <item itemvalue="Application.SACMSApplication" />
         <item itemvalue="Application.SACMSApplication" />

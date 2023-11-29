@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorConfirmationViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorConfirmationViewController">
    <center>
-      <AnchorPane prefHeight="285.0" prefWidth="452.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="285.0" prefWidth="472.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="290.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,7 +33,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <PasswordField fx:id="passwordClubPassword" layoutX="226.0" layoutY="157.0" prefHeight="26.0" prefWidth="160.0" promptText="********" />
+            <PasswordField fx:id="passwordClubPassword" layoutX="259.0" layoutY="132.0" prefHeight="26.0" prefWidth="160.0" promptText="********" />
             <Label fx:id="errorMessage" layoutX="150.0" layoutY="90.0" prefHeight="23.0" prefWidth="152.0" textFill="RED">
                <font>
                   <Font name="System Bold" size="13.0" />
