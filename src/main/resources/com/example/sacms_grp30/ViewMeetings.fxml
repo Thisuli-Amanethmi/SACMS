@@ -46,7 +46,6 @@
         </TableView>
         <Button fx:id="DeleteButton" layoutX="128.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteSubmit" style="-fx-background-color: black;" text="Delete Data" textFill="WHITE" />
         <TextField fx:id="DeleteIdField" layoutX="128.0" layoutY="393.0" prefHeight="25.0" prefWidth="181.0" />
-        <Button fx:id="FindButton" layoutX="320.0" layoutY="393.0" mnemonicParsing="false" onAction="#deleteFind" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: black;" text="Find" textFill="WHITE" />
         <Text layoutX="62.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event ID :">
             <font>
                 <Font name="System Bold" size="12.0" />

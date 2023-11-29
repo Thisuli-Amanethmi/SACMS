@@ -1,5 +1,6 @@
 package com.example.sacms_grp30;
 
+import com.example.sacms_grp30.db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,17 +12,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.sql.*;
 
 public class ViewEventsController implements Initializable {
 
 
     @FXML
-    private Button BackButton;
+    private javafx.scene.control.Button BackButton;
     @FXML
-    private Button DeleteButton;
+    private javafx.scene.control.Button DeleteButton;
     @FXML
     private TableColumn<ScheduledEvents, String> EventID;
     @FXML
@@ -41,12 +42,9 @@ public class ViewEventsController implements Initializable {
     @FXML
     Label MessageField;
     @FXML
-    Button FindButton;
-    @FXML
     Button RefreshButton;
     @FXML
     Button NewEventButton;
-    String foundEvent;
 
     public void handleBackButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("EventSchedulingScene.fxml"));
@@ -54,82 +52,82 @@ public class ViewEventsController implements Initializable {
         window.setScene(new Scene(root, 800, 500));
     }
 
-//    @FXML
-//    private void deleteData(ActionEvent event) {
-//        TableView.TableViewSelectionModel<ScheduledEvents> selectionModel = Table.getSelectionModel();
-//        if (selectionModel.isEmpty()) {
-//            System.out.println("You need to select a data before deleting.");
-//            return; // Exit the method if nothing is selected
-//        }
-//
-//        ObservableList<ScheduledEvents> selectedItems = selectionModel.getSelectedItems();
-//        Table.getItems().removeAll(selectedItems);
-//        Events.eventDetailsList.removeAll(selectedItems);
-//
-//
-//        // Clear the selection after deletion
-//        selectionModel.clearSelection();
-//    }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Setting the cell value factories to each column of the table
-        EventID.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventId"));
-        EventName.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventName"));
-        EventDate.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventDate"));
-        EventTime.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventTime"));
-        EventLocation.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventLocation"));
-        EventDescription.setCellValueFactory(new PropertyValueFactory<ScheduledEvents, String>("eventDescription"));
+        // Setting the cell value factories to each column of the table
+        EventID.setCellValueFactory(new PropertyValueFactory<>("eventId"));
+        EventName.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+        EventDate.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
+        EventTime.setCellValueFactory(new PropertyValueFactory<>("eventTime"));
+        EventLocation.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
+        EventDescription.setCellValueFactory(new PropertyValueFactory<>("eventDescription"));
 
-        ObservableList<ScheduledEvents> list = FXCollections.observableArrayList(); //ObservableList to store data
+        ObservableList<ScheduledEvents> list = FXCollections.observableArrayList();
 
-        for (int i = 0; i < Events.eventDetailsList.size(); i++) {
-            list.addAll(new ScheduledEvents(
-                    (String) Events.eventDetailsList.get(i).get(0),
-                    (String) Events.eventDetailsList.get(i).get(1),
-                    (String) Events.eventDetailsList.get(i).get(2),
-                    (String) Events.eventDetailsList.get(i).get(3),
-                    (String) Events.eventDetailsList.get(i).get(4),
-                    (String) Events.eventDetailsList.get(i).get(5)));
-        }
+        list.addAll(retrieveAllEvents());
+
         Table.setItems(list);
+    }
 
+    public static ObservableList<ScheduledEvents> retrieveAllEvents() {
+        ObservableList<ScheduledEvents> eventsList = FXCollections.observableArrayList();
+        Connection connection = DBConnection.getInstance().getConnection();
+
+        try  {
+            String query = "SELECT * FROM events";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        String eventId = resultSet.getString("event_id");
+                        String eventName = resultSet.getString("event_name");
+                        String eventDate = resultSet.getString("event_date");
+                        String eventTime = resultSet.getString("event_time");
+                        String eventLocation = resultSet.getString("event_location");
+                        String eventDescription = resultSet.getString("event_description");
+
+                        ScheduledEvents event = new ScheduledEvents(eventId, eventName, eventDate, eventTime, eventLocation, eventDescription);
+                        eventsList.add(event);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return eventsList;
     }
 
     private void deleteEvent() {
-        for (int i = 0; i < Events.eventDetailsList.size(); i++) {
-            if (DeleteIdField.getText().equals(Events.eventDetailsList.get(i).get(0))) {
-                Events.eventDetailsList.remove(i);
-                MessageField.setText("");
-                MessageField.setText("Event Deleted Successfully, Click the Refresh Button");
+        String deleteId = DeleteIdField.getText();
+        deleteEvent(deleteId);  // Delete from the database
+
+        // Remove from TableView
+        ScheduledEvents eventToRemove = null;
+        for (ScheduledEvents event : Table.getItems()) {
+            if (event.getEventId().equals(deleteId)) {
+                eventToRemove = event;
+                break;
             }
         }
-    }
-
-    public boolean findEvent(String findEventId) {
-        boolean eventFound = false;
-        for (int i = 0; i < Events.eventDetailsList.size(); i++) {
-            if (findEventId.equals(Events.eventDetailsList.get(i).get(0))) {
-                foundEvent = Events.eventDetailsList.get(i).get(0) + " , " + Events.eventDetailsList.get(i).get(1) + " , " + Events.eventDetailsList.get(i).get(2) + " , " + Events.eventDetailsList.get(i).get(3) + " , " + Events.eventDetailsList.get(i).get(4)+ " , " + Events.eventDetailsList.get(i).get(5);
-                eventFound = true;
-            }
-        }
-        return eventFound;
-    }
-
-    public void deleteFind(ActionEvent actionEvent) throws Exception {
-        if (DeleteIdField.getText().isEmpty()) {
-            MessageField.setText("");
-            MessageField.setText("Enter the Event ID to delete");
+        if (eventToRemove != null) {
+            Table.getItems().remove(eventToRemove);
+            MessageField.setText("Event Deleted Successfully");
         } else {
-            if (findEvent(DeleteIdField.getText())) {
-                MessageField.setText("");
-                MessageField.setText("Event Found");
-            } else {
-                MessageField.setText("");
-                MessageField.setText("Event not found");
+            MessageField.setText("Event not found");
+        }
+    }
+    public static void deleteEvent(String eventId) {
+        Connection connection = DBConnection.getInstance().getConnection();
+        try  {
+            String query = "DELETE FROM events WHERE event_id = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, eventId);
+                preparedStatement.executeUpdate();
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the exception as needed
         }
     }
 
