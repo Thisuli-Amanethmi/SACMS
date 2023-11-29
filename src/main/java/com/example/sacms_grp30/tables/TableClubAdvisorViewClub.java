@@ -2,6 +2,7 @@ package com.example.sacms_grp30.tables;
 
 import java.security.PrivateKey;
 
+//creating a table view class
 public class TableClubAdvisorViewClub {
     private String clubAdvisorName;
     private String clubID;

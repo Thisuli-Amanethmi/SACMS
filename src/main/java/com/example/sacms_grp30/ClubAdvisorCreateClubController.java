@@ -49,13 +49,13 @@ public class ClubAdvisorCreateClubController implements Initializable {
     @FXML
     private TextField txtDescription;
 
+    //clear data in all fields
     @FXML
     void clearData(ActionEvent event) {
         txtClubAdvisorID.clear();
         txtDescription.clear();
         txtClubName.clear();
         comboClubCategory.getSelectionModel().clearSelection();
-
     }
 
     @FXML
@@ -77,24 +77,28 @@ public class ClubAdvisorCreateClubController implements Initializable {
     @FXML
     void saveData(ActionEvent event) {
 
+        //Check if all required data fields are filled
         if(!isDataFilled()){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please fill all details !");
             alert.show();
             return;
         }
 
+        //check if the club advisor exists
         if(getClubAdvisor(txtClubAdvisorID.getText())==null){
             Alert alert = new Alert(Alert.AlertType.ERROR,"This Club Advisor does not exist !");
             alert.show();
             return;
         }
 
+        //check if the club advisor already has a club
         if(isClubAdvisorHasClub(txtClubAdvisorID.getText())){
             Alert alert = new Alert(Alert.AlertType.ERROR,"This Club Advisor has a club already !");
             alert.show();
             return;
         }
 
+        //cleating a club instatnce and setting its properties
         Club club = new Club();
         club.setClubId(autoGenerateClubID());
         club.setClubAdvisorId(txtClubAdvisorID.getText());
@@ -102,9 +106,11 @@ public class ClubAdvisorCreateClubController implements Initializable {
         club.setClubCategory(comboClubCategory.getSelectionModel().getSelectedItem());
         club.setDescription(txtDescription.getText());
 
+        //DB connection and sql query
         Connection connection = DBConnection.getInstance().getConnection();
         String sql="INSERT INTO club VALUES (?,?,?,?,?)";
         try {
+            //prepare and execute sql statements to insert data into database
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,club.getClubId());
             preparedStatement.setString(2,club.getClubAdvisorId());
@@ -114,6 +120,7 @@ public class ClubAdvisorCreateClubController implements Initializable {
 
             preparedStatement.executeUpdate();
 
+            //displaying a message when club added successfully
             new Alert(Alert.AlertType.INFORMATION,"Club added successfully.").show();
             clearData(event);
 
@@ -123,14 +130,17 @@ public class ClubAdvisorCreateClubController implements Initializable {
         }
     }
 
+    //retireving a club advisor from the database by ID
     private ClubAdvisor getClubAdvisor(String clubAdvisorId) {
         String sql="SELECT * FROM club_advisor";
-        //session between java application and the database
+        //DB connection and sql query
         Connection connection = DBConnection.getInstance().getConnection();
         try {
+            //prepare and execute sql statements to insert data into database
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             //maintains a cursor pointing to the table
             ResultSet resultSet = preparedStatement.executeQuery();
+            //Iterate through the result set to find the ClubAdvisor with the specified ID.
             while(resultSet.next()){
                 if(resultSet.getString("club_advisor_id").equals(clubAdvisorId)){
                     ClubAdvisor advisor=new ClubAdvisor();
@@ -138,8 +148,8 @@ public class ClubAdvisorCreateClubController implements Initializable {
                     advisor.setFirstName(resultSet.getString("first_name"));
                     advisor.setLastName(resultSet.getString("last_name"));
 
+                    //returning the found advisor
                     return advisor;
-
                 }
             }
         } catch (SQLException e) {
@@ -149,8 +159,10 @@ public class ClubAdvisorCreateClubController implements Initializable {
         return null;
     }
 
+    //initialize the javaFX controller and fxml file is loaded
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Creating an observable list to store club categories
         ObservableList<String> category = FXCollections.observableArrayList();
         category.add("Academic");
         category.add("Technology");
@@ -162,6 +174,7 @@ public class ClubAdvisorCreateClubController implements Initializable {
 
     }
 
+    //check if all the required fields are filled
     public boolean isDataFilled(){
 
         if(txtClubAdvisorID.getText().isBlank()||comboClubCategory.getSelectionModel()==null||
@@ -170,17 +183,24 @@ public class ClubAdvisorCreateClubController implements Initializable {
         return true;
     }
 
+    //auto generating club id
     public String autoGenerateClubID(){
+        //Create a list to store existing Club ID
         List<String> clubIDs=new ArrayList<>();
+        //SQL query to select all records from the club table
         String sql="SELECT * FROM club";
+        //database connection
         Connection connection = DBConnection.getInstance().getConnection();
         try {
+            //preprare and execute SQL statements
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
+            //Iterate through the result set to check for the given email
             while(resultSet.next()){
                 clubIDs.add(resultSet.getString("club_id"));
             }
 
+            //checking club id
             if(clubIDs.isEmpty()){
                 return "C001";
             }else {
@@ -201,12 +221,16 @@ public class ClubAdvisorCreateClubController implements Initializable {
         }
     }
 
+    //check if the club advisor has a club
     public boolean isClubAdvisorHasClub(String clubAdvisorId){
         String sql="SELECT * FROM club";
+        //db connection
         Connection connection = DBConnection.getInstance().getConnection();
         try {
+            //Prepare and execute the SQL statement
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
+            //Iterate through the result set to check if the Club Advisor has associated clubs
             while(resultSet.next()){
                 if(resultSet.getString("club_advisor_id").equals(clubAdvisorId)){
                     return true;
