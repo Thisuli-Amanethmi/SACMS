@@ -33,9 +33,6 @@ public class ClubAdvisorCheckMembersController implements Initializable {
     private Button btnBack;
 
     @FXML
-    private Button btnSearch;
-
-    @FXML
     private TableColumn<TableClubAdvisorCheckMembers, String> colEmail;
 
     @FXML
@@ -47,8 +44,6 @@ public class ClubAdvisorCheckMembersController implements Initializable {
     @FXML
     private TableView<TableClubAdvisorCheckMembers> tblClubMembers;
 
-    @FXML
-    private TextField txtSearchClubName;
 
     public static String clubId = "";
 
@@ -64,11 +59,6 @@ public class ClubAdvisorCheckMembersController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setTitle("Club Advisor - Club Management");
         stage.show();
-
-    }
-
-    @FXML
-    void searchClubName(ActionEvent event) {
 
     }
 

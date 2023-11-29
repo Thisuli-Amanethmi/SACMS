@@ -103,8 +103,6 @@ public class ClubAdvisorManageClubController implements Initializable {
         txtClubName.setText(selectedItem.getClubName());
     }
 
-
-
     @FXML
     void loadCheckMembers(ActionEvent event) throws IOException {
 
