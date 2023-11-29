@@ -59,10 +59,10 @@ public class ClubAdvisorViewClubController implements Initializable {
     //passing the attributes from the TableClubAdvisorViewClub Object
 
     @FXML
+    //clear the data on text field
     void clearData(ActionEvent event) {
         txtSearchClubName.clear();
         loadTableData();
-
     }
     @FXML
     void loadManageClub(ActionEvent event) throws IOException {
@@ -80,6 +80,7 @@ public class ClubAdvisorViewClubController implements Initializable {
     }
 
     @FXML
+    //Searches for clubs based on the entered club name and populates the TableView with the matching results
     void searchClubName(ActionEvent event) {
 
         if(txtSearchClubName.getText().isBlank()){
@@ -87,8 +88,10 @@ public class ClubAdvisorViewClubController implements Initializable {
             return;
         }
 
+        //Process the entered club name for searching , remove the spaces
         String[] clubNameSearchSplit = txtSearchClubName.getText().replaceAll("\\s","").toUpperCase().split("");
 
+        //Create a list to store TableClubAdvisorViewClub instances
         List<TableClubAdvisorViewClub> viewClubs=new ArrayList<>();
 
         String sql="SELECT * FROM club";
@@ -123,16 +126,17 @@ public class ClubAdvisorViewClubController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
 
     @Override
+    //Initializes the JavaFX controller when the associated FXML file is loaded
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initiateTable();
         loadTableData();
     }
 
+    //load club data from the database and show it in table view
     private void loadTableData() {
         List<TableClubAdvisorViewClub> clubs=new ArrayList<>();
 
@@ -146,6 +150,7 @@ public class ClubAdvisorViewClubController implements Initializable {
                 TableClubAdvisorViewClub club=new TableClubAdvisorViewClub();
                 ClubAdvisor clubAdvisor = getClubAdvisor(resultSet.getString("club_advisor_id"));
 
+                //se the properties to tableview class
                 club.setClubAdvisorName(clubAdvisor.getFirstName()+" "+clubAdvisor.getLastName());
                 club.setClubID(resultSet.getString("club_id"));
                 club.setClubName(resultSet.getString("club_name"));
@@ -164,6 +169,7 @@ public class ClubAdvisorViewClubController implements Initializable {
         tblViewClub.setItems(FXCollections.observableList(clubs));
     }
 
+    //get the number of students based on the club id
     private int getNoOfStudentsInClub(String clubID) {
         int count=0;
         String sql="SELECT * FROM club_student";
@@ -183,6 +189,7 @@ public class ClubAdvisorViewClubController implements Initializable {
         return count;
     }
 
+    //Retrieves a ClubAdvisor from the club_advisor table based on the given clubAdvisorID
     private ClubAdvisor getClubAdvisor(String clubAdvisorId) {
         String sql="SELECT * FROM club_advisor";
         //session between java application and the database
@@ -209,6 +216,7 @@ public class ClubAdvisorViewClubController implements Initializable {
         return null;
     }
 
+    //Initializes the columns of the TableView with corresponding cell value
     private void initiateTable() {
         colClubAdvisorName.setCellValueFactory(new PropertyValueFactory<>("clubAdvisorName"));
         colClubID.setCellValueFactory(new PropertyValueFactory<>("clubID"));

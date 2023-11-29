@@ -1,5 +1,6 @@
 package com.example.sacms_grp30.tables;
 
+//creating a table view class
 public class TableClubAdvisorCheckMembers {
     private String studentID;
     private String studentName;

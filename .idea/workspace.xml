@@ -4,17 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43c1d61e-7a5f-45d6-a606-5e89367af622" name="Changes" comment="Student view and join/register Club, Event, Meeting - completed">
+    <list default="true" id="01ef76d3-bc6f-413f-89fa-25553ac28278" name="Changes" comment="connector added. register updated. comments added">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/ClubSearchModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/EventSearchModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/model/MeetingSearchModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/ClubSearchModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/EventSearchModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/model/MeetingSearchModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ClubAdvisorLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/SACMSApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/SACMSApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduleMeetingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ScheduledMeetings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentLogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentLogInViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentRegisterViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentRegisterViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewClubViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewClubViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewEventsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewEventsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewMeetingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewMeetingsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewProfileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/StudentViewProfileViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/db/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/db/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewMeetingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sacms_grp30/ViewMeetingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/club-advisor-login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentRegister-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentRegister-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewEvents-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewEvents-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewMeetings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/sacms_grp30/studentViewMeetings-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ClubAdvisorLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ClubAdvisorLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleEventsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduleMeetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledEvents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ScheduledMeetings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentLogInViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentLogInViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentRegisterViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentRegisterViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewClubViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewClubViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewEventsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewEventsViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewMeetingsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewMeetingsViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewProfileViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/StudentViewProfileViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/ViewEventsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/club-advisor-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/club-advisor-login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/db/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/db/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentRegister-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentRegister-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewEvents-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewEvents-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewMeetings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sacms_grp30/studentViewMeetings-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +84,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_directory_selection": "C:/Users/Thisuli Amanethmi/IdeaProjects/demo/testing_1_SACMS/src/main/java/com/example/sacms_grp30",
-    "last_opened_file_path": "C:/Users/Thisuli Amanethmi/Downloads/mysql-connector-j-8.2.0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "Merging Nina"
   }
 }]]></component>
   <component name="RunManager">
@@ -138,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Club Advisor UIs and Cotrollers Created" />
+    <MESSAGE value="connector added. register updated. comments added" />
     <MESSAGE value="Club Advisor Confirmation UI and Controller" />
     <MESSAGE value="Student view and join/register Club, Event, Meeting - completed" />
     <option name="LAST_COMMIT_MESSAGE" value="Student view and join/register Club, Event, Meeting - completed" />

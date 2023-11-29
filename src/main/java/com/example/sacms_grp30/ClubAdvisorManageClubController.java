@@ -83,6 +83,7 @@ public class ClubAdvisorManageClubController implements Initializable {
 
     public static String selectedClubId="";
 
+    //Clears the data and loads club details
     @FXML
     void clearData(ActionEvent event) {
         txtClubAdvisorID.clear();
@@ -93,6 +94,7 @@ public class ClubAdvisorManageClubController implements Initializable {
 
         loadClubDetails();
     }
+    //Loads data from the selected item in the TableView into corresponding text fields.
     @FXML
     void loadDataToTextFields(MouseEvent event) {
         TableClubAdvisorManageClub selectedItem = tblClub.getSelectionModel().getSelectedItem();
@@ -103,6 +105,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         txtClubName.setText(selectedItem.getClubName());
     }
 
+    //Loads the check members window for the selected club
     @FXML
     void loadCheckMembers(ActionEvent event) throws IOException {
 
@@ -156,6 +159,7 @@ public class ClubAdvisorManageClubController implements Initializable {
 
     }
 
+    //Searches for clubs based on the entered club name and populates the TableView with the matching results
     @FXML
     void searchClub(ActionEvent event) {
 
@@ -164,8 +168,10 @@ public class ClubAdvisorManageClubController implements Initializable {
             return;
         }
 
+        //Process the entered club name for searching
         String[] clubNameSearchSplit = txtSearchClubName.getText().replaceAll("\\s","").toUpperCase().split("");
 
+        //reate a list to store TableClubAdvisorManageClub instances
         List<TableClubAdvisorManageClub> viewClubs=new ArrayList<>();
 
         String sql="SELECT * FROM club";
@@ -201,6 +207,7 @@ public class ClubAdvisorManageClubController implements Initializable {
 
     }
 
+    //Updates the details of a club in the database based on the entered data
     @FXML
     void updateClub(ActionEvent event) {
 
@@ -234,6 +241,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         }
     }
 
+    //Checks if all required data for a club is filled
     public boolean isDataFilled(){
         if(txtClubID.getText().isBlank()||txtClubAdvisorID.getText().isBlank()||txtClubName.getText().isBlank()||
         txtDescription.getText().isBlank()) return false;
@@ -241,6 +249,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         return true;
     }
 
+    //Deletes a club and its associated club students from the database based on the entered club ID
     @FXML
     void deleteClub(ActionEvent event) {
         if(txtClubID.getText().isBlank()){
@@ -273,12 +282,14 @@ public class ClubAdvisorManageClubController implements Initializable {
         }
     }
 
+    //Initializes the controller when the corresponding FXML file is loaded
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initiateTable();
         loadClubDetails();
     }
 
+    //Loads club details from the database and populates the TableView with the retrieved data.
     private void loadClubDetails() {
         List<TableClubAdvisorManageClub> clubs = new ArrayList<>();
 
@@ -309,6 +320,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         }
     }
 
+    //Retrieves a ClubAdvisor object based on the given club advisor ID from the database.
     private ClubAdvisor getClubAdvisor(String clubAdvisorId) {
         String sql="SELECT * FROM club_advisor";
         //session between java application and the database
@@ -335,6 +347,7 @@ public class ClubAdvisorManageClubController implements Initializable {
         return null;
     }
 
+    //Initializes the columns of the TableView with the corresponding property values
     private void initiateTable() {
         colClubAdvisorName.setCellValueFactory(new PropertyValueFactory<>("clubAdvisorName"));
         colClubID.setCellValueFactory(new PropertyValueFactory<>("clubID"));

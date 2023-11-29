@@ -62,15 +62,16 @@ public class ClubAdvisorCheckMembersController implements Initializable {
 
     }
 
+    //Initializes the JavaFX controller when the associated FXML file is loaded.
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(() -> {
             initializeTable();
             loadStudents();
         });
-
     }
 
+    //load and displays club details in a table view
     private void loadStudents() {
         List<TableClubAdvisorCheckMembers> members=new ArrayList<>();
         System.out.println(clubId);
@@ -81,7 +82,9 @@ public class ClubAdvisorCheckMembersController implements Initializable {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 if(resultSet.getString("club_id").equals(clubId)){
+                    //Get the student information based on the student_id
                     Student student = getStudent(resultSet.getString("student_id"));
+                    //Create the TableClubAdvisorCheckMembers instance and set its properties
                     TableClubAdvisorCheckMembers member = new TableClubAdvisorCheckMembers();
                     member.setStudentID(student.getStudentId());
                     member.setStudentName(student.getStudentName());
@@ -98,14 +101,17 @@ public class ClubAdvisorCheckMembersController implements Initializable {
 
     }
 
+    //retrieves a student from the database according to the student id
     private Student getStudent(String studentId) {
         String sql="SELECT * FROM student";
         Connection connection = DBConnection.getInstance().getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
+            //Iterate through the result set to find the student with the specified ID
             while (resultSet.next()){
                 if(resultSet.getString("student_id").equals(studentId)){
+                    //Create a Student instance and set its properties
                     Student student=new Student();
                     student.setStudentId(resultSet.getString("student_id"));
                     student.setStudentName(resultSet.getString("student_name"));
@@ -120,12 +126,14 @@ public class ClubAdvisorCheckMembersController implements Initializable {
         return null;
     }
 
+    //Initializes the columns of the TableView with corresponding cell values
     private void initializeTable() {
         colStudentID.setCellValueFactory(new PropertyValueFactory<>("studentID"));
         colStudentName.setCellValueFactory(new PropertyValueFactory<>("studentName"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
     }
 
+    //Sets the clubId property with the provided value
     public void setClubId(String club){
         System.out.println(club);
         clubId=club;
