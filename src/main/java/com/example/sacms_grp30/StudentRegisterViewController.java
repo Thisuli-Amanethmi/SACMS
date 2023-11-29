@@ -164,7 +164,6 @@ public class StudentRegisterViewController {
                     || password.getText().equals("Password is too short") || password.getText().equals("Invalid Password")) {
                 messageBox.setText("Registration unsuccessful !!! Enter valid data !!!");
             } else {
-                System.out.println("1111");
                 navigateRegisterStudentDatabase(); // all good
             }
         } else {
@@ -177,7 +176,6 @@ public class StudentRegisterViewController {
     }
 
     private void navigateRegisterStudentDatabase() throws SQLException {
-        System.out.println("222");
         String uiStudentID = IDtxt.getText();
         String uiStudentName = nameTxt.getText();
         String uiStudentEmail = emailTxt.getText();
@@ -188,15 +186,12 @@ public class StudentRegisterViewController {
         ArrayList<String[]> studentTableDetails = new ArrayList<>(); // to store all the student details
 
         Connection connection = DBConnection.getInstance().getConnection(); // to use the created Connection in DBConnection class
-        System.out.println("1");
 
         Statement statement = connection.createStatement(); // to execute sql queries
-        System.out.println("2");
 
         String query1 = "SELECT * FROM student";
         // ResultSet is for get some data from the database
         ResultSet result = statement.executeQuery(query1); // executing the query
-        System.out.println("3");
 
         String ID;
         String name;
@@ -216,8 +211,6 @@ public class StudentRegisterViewController {
 
             studentTableDetails.add(studentDetails);
         }
-
-        System.out.println("4");
 
         // Printing the data in userTableDetails
         for(int i=0; i<studentTableDetails.size(); i++) {
@@ -240,7 +233,6 @@ public class StudentRegisterViewController {
         }
 
         if(messageBox.getText().equals(" ") || messageBox.getText().isEmpty()) {
-            System.out.println("yeahh");
             // registerStudent(uiStudentID, uiStudentName, uiStudentEmail, uiStudentPassword);
             String query2 = "Insert INTO student VALUES ("; // to add student details to the database
             statement.executeUpdate(query2 + "'" + uiStudentID + "', '" + uiStudentName + "', '"
@@ -248,13 +240,10 @@ public class StudentRegisterViewController {
 
             System.out.println(query2 + "'" + uiStudentID + ", '" + uiStudentName + "', '" + uiStudentEmail + "', '" + uiStudentPassword + "');");
 
-            System.out.println("www");
             messageBox.setText("Successful Student Registration !!!");
         }
 
         // connection.close();
-
-        System.out.println("Connection closed.");
     }
 
     public void backButtonOnClick(ActionEvent actionEvent) throws Exception {
