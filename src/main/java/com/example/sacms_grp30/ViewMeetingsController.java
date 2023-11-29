@@ -46,6 +46,8 @@ public class ViewMeetingsController implements Initializable {
     @FXML
     Button NewMeetingButton;
 
+
+    // Event handler for the BackButton, which navigates back to the main event scheduling scene
     public void handleBackButton() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("EventSchedulingScene.fxml"));
         Stage window = (Stage) BackButton.getScene().getWindow();
@@ -62,12 +64,15 @@ public class ViewMeetingsController implements Initializable {
         MeetingPlatform.setCellValueFactory(new PropertyValueFactory<>("meetingPlatform"));
         MeetingDescription.setCellValueFactory(new PropertyValueFactory<>("meetingDescription"));
 
+        // Populating the TableView with meetings data
         ObservableList<ScheduledMeetings> list = FXCollections.observableArrayList();
 
         list.addAll(retrieveAllEvents());
 
         MeetingTable.setItems(list);
     }
+
+    // Method to retrieve all meetings data from the database
     public static ObservableList<ScheduledMeetings> retrieveAllEvents() {
         ObservableList<ScheduledMeetings> meetingsList = FXCollections.observableArrayList();
         Connection connection = DBConnection.getInstance().getConnection();
@@ -95,6 +100,8 @@ public class ViewMeetingsController implements Initializable {
 
         return meetingsList;
     }
+
+    // Method to delete a meeting by both removing it from the database and the TableView
     private void deleteMeeting() {
         String deleteId = DeleteIdField.getText();
         deleteMeeting(deleteId);  // Delete from the database
@@ -114,6 +121,8 @@ public class ViewMeetingsController implements Initializable {
             MessageField.setText("Meeting not found");
         }
     }
+
+    // Method to delete a meeting from the database
     public static void deleteMeeting(String meetingId) {
         Connection connection = DBConnection.getInstance().getConnection();
         try  {
@@ -127,15 +136,20 @@ public class ViewMeetingsController implements Initializable {
             // Handle the exception as needed
         }
     }
+
+    // Event handler for the DeleteButton, triggering the deletion of a meeting
     public void deleteSubmit(ActionEvent event) throws Exception {
         deleteMeeting();
     }
 
+    // Event handler for the RefreshButton, refreshing the TableView
     public void handleRefreshButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ViewMeetings.fxml"));
         Stage window = (Stage) RefreshButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 500));
     }
+
+    // Event handler for the NewMeetingButton
     public void handleNewEventButton() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("ScheduleEventsScene.fxml"));
         Stage window = (Stage) NewMeetingButton.getScene().getWindow();

@@ -10,5 +10,6 @@ module com.example.cwsample {
     opens com.example.sacms_grp30 to javafx.fxml;
     opens com.example.sacms_grp30.model;
     opens com.example.sacms_grp30.tables;
+    exports com.example.sacms_grp30.model;
 
 }

@@ -46,6 +46,7 @@ public class ViewEventsController implements Initializable {
     @FXML
     Button NewEventButton;
 
+    // Event handler for the BackButton, which navigates back to the main event scheduling scene
     public void handleBackButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("EventSchedulingScene.fxml"));
         Stage window = (Stage) BackButton.getScene().getWindow();
@@ -53,6 +54,7 @@ public class ViewEventsController implements Initializable {
     }
 
 
+    // Initialization method to set up the TableView and retrieve events data
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Setting the cell value factories to each column of the table
@@ -63,6 +65,7 @@ public class ViewEventsController implements Initializable {
         EventLocation.setCellValueFactory(new PropertyValueFactory<>("eventLocation"));
         EventDescription.setCellValueFactory(new PropertyValueFactory<>("eventDescription"));
 
+        // Populating the TableView with events data
         ObservableList<ScheduledEvents> list = FXCollections.observableArrayList();
 
         list.addAll(retrieveAllEvents());
@@ -70,6 +73,7 @@ public class ViewEventsController implements Initializable {
         Table.setItems(list);
     }
 
+    // Method to retrieve all events data from the database
     public static ObservableList<ScheduledEvents> retrieveAllEvents() {
         ObservableList<ScheduledEvents> eventsList = FXCollections.observableArrayList();
         Connection connection = DBConnection.getInstance().getConnection();
@@ -78,6 +82,7 @@ public class ViewEventsController implements Initializable {
             String query = "SELECT * FROM events";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    // Iterating through the result set and creating ScheduledEvents objects
                     while (resultSet.next()) {
                         String eventId = resultSet.getString("event_id");
                         String eventName = resultSet.getString("event_name");
@@ -98,6 +103,7 @@ public class ViewEventsController implements Initializable {
         return eventsList;
     }
 
+    // Method to delete an event by both removing it from the database and the TableView
     private void deleteEvent() {
         String deleteId = DeleteIdField.getText();
         deleteEvent(deleteId);  // Delete from the database
@@ -117,6 +123,8 @@ public class ViewEventsController implements Initializable {
             MessageField.setText("Event not found");
         }
     }
+
+    // Method to delete an event from the database
     public static void deleteEvent(String eventId) {
         Connection connection = DBConnection.getInstance().getConnection();
         try  {
@@ -127,19 +135,23 @@ public class ViewEventsController implements Initializable {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the exception as needed
+
         }
     }
 
+    // Event handler for the DeleteButton
     public void deleteSubmit(ActionEvent event) throws Exception {
         deleteEvent();
     }
 
+    // Event handler for the RefreshButton, refreshing the TableView
     public void handleRefreshButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ViewEvents.fxml"));
         Stage window = (Stage) RefreshButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 500));
     }
+
+    // Event handler for the NewEventButton, navigating to the event scheduling scene
     public void handleNewEventButton() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("ScheduleEventsScene.fxml"));
         Stage window = (Stage) NewEventButton.getScene().getWindow();

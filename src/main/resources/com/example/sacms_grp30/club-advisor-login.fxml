@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorLoginController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sacms_grp30.ClubAdvisorLoginController">
    <children>
       <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -39,5 +38,10 @@
             <Image url="@BackButton.png" />
          </image>
       </ImageView>
+      <Label fx:id="logInMessageTxt" layoutX="275.0" layoutY="152.0" prefHeight="19.0" prefWidth="269.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

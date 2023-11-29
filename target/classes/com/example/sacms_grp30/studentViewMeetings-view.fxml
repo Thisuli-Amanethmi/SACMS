@@ -41,11 +41,11 @@
                 <TableView fx:id="meetingDetailsTable" layoutX="85.0" layoutY="101.0" prefHeight="254.0" prefWidth="630.0">
                <columns>
                   <TableColumn fx:id="MeetingIDColumn" prefWidth="75.0" text="Meeting ID" />
-                  <TableColumn fx:id="meetingNameColumn" prefWidth="135.19993591308594" text="Meeting Name" />
                   <TableColumn fx:id="meetingTopicColumn" prefWidth="140.800048828125" text="Meeting Topic" />
                   <TableColumn fx:id="meetingDateColumn" prefWidth="81.5999755859375" text="Date" />
                   <TableColumn fx:id="meetingTimeColumn" prefWidth="85.5999755859375" text="Time" />
                   <TableColumn fx:id="meetingPlatformColumn" prefWidth="112.800048828125" text="Meeting Platform" />
+                  <TableColumn fx:id="meetingDescriptionColumn" prefWidth="132.00003662109373" text="Meeting Description" />
                </columns>
                 </TableView>
                 <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="471.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">

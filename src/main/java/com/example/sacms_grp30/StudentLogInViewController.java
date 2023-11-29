@@ -34,6 +34,7 @@ public class StudentLogInViewController {
     @FXML
     private Label logInMessageTxt;
 
+
     // validating inputs - ID
     public int checkIDValid(String ID) {
         if((!ID.matches("^S[0-9]+$"))) {
@@ -109,12 +110,19 @@ public class StudentLogInViewController {
         }
     }
 
+    public static String[] joinClubStudentID = new String[1];
+
     public void navigateLogInStudent(ActionEvent actionEvent) throws SQLException {
+        joinClubStudentID[0] = "S001";
+
+        joinClubStudentID[0] = studentIDTxt.getText();
+        System.out.println(joinClubStudentID[0]);
+
         Connection connection = DBConnection.getInstance().getConnection(); // to use the created Connection in DBConnection class
 
         Statement statement = connection.createStatement(); // to execute sql queries
 
-        String query1 = "SELECT * FROM student WHERE studentID='";
+        String query1 = "SELECT * FROM student WHERE student_id='";
         ResultSet result = statement.executeQuery(query1 + studentIDTxt.getText() + "';"); // executing the query
 
         String ID;
@@ -148,7 +156,7 @@ public class StudentLogInViewController {
     }
 
     public void logInButtonOnClick(ActionEvent actionEvent) throws Exception {
-        navigateLogIn(actionEvent);
+        checkLogIn(actionEvent);
     }
 
     private void navigateLogIn(ActionEvent actionEvent) throws Exception {
